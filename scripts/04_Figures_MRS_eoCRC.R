@@ -1,6 +1,6 @@
 ### Script to reproduce results of:
 ### Epigenetic Fingerprints Link Early-Onset Colon and Rectal Cancer to Pesticide Exposure  
-### Silvana C.E. Maas, Iosune Baraibar, Odei Blanco Irazuegui, Elena Elez, Jose A. Seoane 
+### Silvana C.E. Maas, Iosune Baraibar, Lea Lemler, Maria Butjosa-Espín, Odei Blanco Irazuegui, Elena Elez, Jose A. Seoane 
 ### author: Silvana C.E. Maas (silvanamaas at vhio.net)
 
 
@@ -228,8 +228,8 @@ tables <- lapply(datasets, read.csv, header = TRUE)
                 spacing=0.49,
                 squaresize =1.1, 
                 
-                col.study = c("#5F9ED1FF", "#D94801", "#5F9ED1FF", "#807DBA", "#5F9ED1FF", "#D94801", "#807DBA"),
-                col.square = c("#5F9ED1FF", "#D94801", "#5F9ED1FF", "#807DBA", "#5F9ED1FF", "#D94801", "#807DBA"), 
+                col.study = c("#5F9ED1FF", "#D94801", "#5F9ED1FF","#D94801", "#5F9ED1FF", "#5F9ED1FF", "#807DBA", "#5F9ED1FF", "#D94801", "#807DBA"),
+                col.square = c("#5F9ED1FF", "#D94801", "#5F9ED1FF","#D94801", "#5F9ED1FF", "#5F9ED1FF", "#807DBA", "#5F9ED1FF", "#D94801", "#807DBA"),
                 col.square.lines = "black")
     
 
@@ -421,6 +421,486 @@ ggplot(comb, aes(x= factor(trait, levels = c("MDS",  "Obesity", "education","smo
 
 
 
+#
+#
+# Figure 3d: Adjustment for other methylation risk scores- GW threshold
+#
+#
+
+MRS <- read.csv("Results/MRS/GWCOAD.csv", header=T)
+MRS$EOCRC <- as.factor(MRS$EOCRC)
+trait <- names(MRS)[2:20]
+trait <- trait[-15]
+
+pesti <- matrix(ncol= 6, nrow= length(trait))
+colnames(pesti) <- c("Estimate", "Std. Error", "z value", "Pr(>|z|)", "CI_l", "CI_H")
+row.names(pesti) <- trait
+
+test <- glm(EOCRC ~ PICLORAM + gender,  family = binomial, data = MRS) 
+summary.glm(test)$coefficients
+
+for (i in trait){
+  
+  model <- paste0("EOCRC ~ scale(PICLORAM) + gender + ", i)
+  
+  test <- glm(model,  family = binomial, data = MRS) 
+  results_df <-summary.glm(test)$coefficients
+  results_df <- as.data.frame(t(results_df["scale(PICLORAM)",]))
+  pesti[i,1] <- results_df[1,1]
+  pesti[i,2] <- results_df[1,2]
+  pesti[i,3] <- results_df[1,3]
+  pesti[i,4] <- results_df[1,4]
+  
+  CIl <-  confint(test)["scale(PICLORAM)","2.5 %"]
+  CIh <- confint(test)["scale(PICLORAM)","97.5 %"]
+  
+  pesti[i,5] <- as.numeric(CIl)
+  pesti[i,6] <- as.numeric(CIh)
+  
+}
+
+pesti <- as.data.frame(pesti)
+
+test <- glm(EOCRC ~ scale(PICLORAM) + gender,  family = binomial, data = MRS) 
+results_df <-summary.glm(test)$coefficients
+results_df <- as.data.frame(t(results_df["scale(PICLORAM)",]))
+pesti["Basic",1] <- results_df[1,1]
+pesti["Basic",2] <- results_df[1,2]
+pesti["Basic",3] <- results_df[1,3]
+pesti["Basic",4] <- results_df[1,4]
+
+CIl <-  confint(test)["scale(PICLORAM)","2.5 %"]
+CIh <- confint(test)["scale(PICLORAM)","97.5 %"]
+pesti["Basic",5] <- as.numeric(CIl)
+pesti["Basic",6] <- as.numeric(CIh)
+
+pesti$logP <- -log10(pesti$`Pr(>|z|)`)
+
+pesti$name <- rownames(pesti)
+mete <- pesti
+mete$name[mete$name == "A_2_4_D"] <- "2,4-D"
+mete$name[mete$name == "ACETOCHLOR"] <- "Acetochlor"
+mete$name[mete$name == "AHEI"] <- "AHEI"
+mete$name[mete$name == "Alcohol"] <- "Alcohol"
+mete$name[mete$name == "ATRAZINE"] <- "Atrazine"
+mete$name[mete$name == "birthweight"] <- "Birthweight"
+mete$name[mete$name == "BMI"] <- "BMI"
+mete$name[mete$name == "CHLORDANE"] <- "Chlordane"
+mete$name[mete$name == "coffee"] <- "Coffee"
+mete$name[mete$name == "DDT"] <- "DDT"
+mete$name[mete$name == "dicamba"] <- "Dicamba"
+mete$name[mete$name == "education"] <- "Education"
+mete$name[mete$name == "GLYPHOSATE"] <- "Glyphosate"
+mete$name[mete$name == "HEPTACHLOR"] <- "Heptachlor"
+mete$name[mete$name == "LINDANE"] <- "Lindane"
+mete$name[mete$name == "MALATHION"] <- "Malathion"
+mete$name[mete$name == "MDS"] <- "MDS"
+mete$name[mete$name == "MESOTRIONE"] <- "Mesotrione"
+mete$name[mete$name == "METOLACHLOR"] <- "Metolachlor"
+mete$name[mete$name == "NO2"] <- "NO2"
+mete$name[mete$name == "Obesity"] <- "Obesity"
+mete$name[mete$name == "PCB"] <- "PCB" 
+mete$name[mete$name == "PICLORAM"] <- "Picloram"
+mete$name[mete$name == "pm10"] <- "PM10"
+mete$name[mete$name == "pm2_5"] <- "PM2.5"
+mete$name[mete$name == "pm2_510"] <- "PM2.5-10"
+mete$name[mete$name == "smoking"] <- "Smoking"
+mete$name[mete$name == "smoking_sm13"] <- "Smoking-Maas"
+mete$name[mete$name == "TOXAPHENE"] <- "Toxaphene"
+
+mete$name[mete$name == "Basic"] <- "Baseline"
+mete$cat[mete$name ==  "2,4-D"] <- "Pesticides"
+mete$cat[mete$name == "Acetochlor"] <- "Pesticides"
+mete$cat[mete$name == "AHEI"] <- "Lifestyle"
+mete$cat[mete$name == "Alcohol"] <- "Lifestyle"
+mete$cat[mete$name == "Atrazine"] <- "Pesticides"
+mete$cat[mete$name == "Birthweight"] <- "Lifestyle"
+mete$cat[mete$name == "BMI"] <- "Lifestyle"
+mete$cat[mete$name == "Chlordane"] <- "Pesticides"
+mete$cat[mete$name == "Coffee"] <- "Lifestyle"
+mete$cat[mete$name == "Delivery"] <- "Lifestyle"
+mete$cat[mete$name == "DDT"] <- "Pesticides"
+mete$cat[mete$name == "Dicamba"] <- "Pesticides"
+mete$cat[mete$name == "Education"] <- "Lifestyle"
+mete$cat[mete$name == "Glyphosate"] <- "Pesticides"
+mete$cat[mete$name == "Heptachlor"] <- "Pesticides"
+mete$cat[mete$name == "Lindane"] <- "Pesticides"
+mete$cat[mete$name == "Malathion"] <- "Pesticides"
+mete$cat[mete$name == "MDS"] <- "Lifestyle"
+mete$cat[mete$name == "Mesotrione"] <- "Pesticides"
+mete$cat[mete$name == "Metolachlor"] <- "Pesticides"
+mete$cat[mete$name == "NO2"] <- "Air pollution"
+mete$cat[mete$name == "Obesity"] <- "Lifestyle"
+mete$cat[mete$name == "PCB"] <- "Air pollution"
+mete$cat[mete$name == "Picloram"] <- "Pesticides"
+mete$cat[mete$name == "PM10"] <- "Air pollution"
+mete$cat[mete$name == "PM2.5"] <- "Air pollution"
+mete$cat[mete$name == "PM2.5-10"] <- "Air pollution"
+mete$cat[mete$name == "Smoking"] <- "Lifestyle"
+mete$cat[mete$name == "Smoking-Maas"] <- "Lifestyle"
+mete$cat[mete$name == "Toxaphene"] <- "Pesticides"
+mete$cat[mete$name == "Baseline"] <- "Baseline"
+pesti <- mete
+
+library(dmetar)
+library(tidyverse)
+library(meta)
+
+pesti$cat <- factor(pesti$cat, levels = c("Baseline", "Air pollution", "Lifestyle", "Pesticides"))
+newggpl <- pesti
+
+names(newggpl) <- c("beta", "se", "z.value", "pvalue", "CI_L","CI_H", "logP", "sample", "cat") 
+
+m.gen_bin <- metagen(TE = beta,
+                     seTE = se,
+                     lower = CI_L,
+                     upper = CI_H,
+                     studlab = sample,
+                     data = newggpl,
+                     sm = "OR",
+                     method.tau = "PM",
+                     fixed = FALSE,
+                     random = TRUE,
+                     byvar= cat
+)
+
+
+### Figure 3c: Adjustments for other MRS-GW
+
+
+forest.meta(m.gen_bin, 
+            sortvar = studlab,
+            prediction = F, 
+            print.tau2 = F,
+            leftcols = c("sample"),
+            leftlabs = c("Adjustment"),
+            hetstat = FALSE,
+            random = F,
+            rightcols = c("effect", "ci"),
+            just.studlab =  c("left"),
+            just.addcols =  c("left"),
+            test.subgroup.random = F,
+            print.subgroup.name = FALSE,
+            col.by = c("black"),
+            calcwidth.random=F,
+            fs.heading= 5,
+            fontsize =5,
+            scientific.pval =T,
+            plotwidth = "2.5cm",
+            colgap.left = "0.15cm",
+            colgap.forest.left="0.0001cm",
+            colgap.forest.right="0.001cm",
+            spacing=0.49,
+            squaresize =0.8, 
+            weight.study = "same" 
+)
+
+
+#
+#
+# Figure 3e: Adjustment for patients or tumor-specific markers
+#
+#
+
+GLM <- matrix(ncol=7, nrow= 11)
+colnames(GLM) <- c("Estimate", "Std. Error", "z value", "Pr(>|z|)", "CI_l", "CI_H", "N")
+row.names(GLM) <- c("Basic_M1", "subLR_M1", "subLR_M2", "history_M1","history_M2", "race_M1","race_M2", "MSS_M1", "MSS_M2", "Puritycon_M1", "Puritycon_M2")
+
+# Download the full clinical data from TCGAbiolinks
+clinic <- read.csv("/Startdata/COAD_clinic.csv", header=T)
+clinic <- clinic [3:461,]
+clinic <- clinic[,c("bcr_patient_barcode", "anatomic_neoplasm_subdivision", "family_history_colorectal_cancer")]
+names(clinic) <- c("ID", "subdivision", "family_history")
+
+GW <- read.csv("Results/MRS/GWCOAD.csv", header=T)
+
+test <- glm(EOCRC ~ scale(PICLORAM) + gender, family = binomial, data = GW) 
+results_df <-summary.glm(test)$coefficients
+results_df <- as.data.frame(t(results_df[2,]))
+GLM["Basic_M1",1] <- results_df[1,1]
+GLM["Basic_M1",2] <- results_df[1,2]
+GLM["Basic_M1",3] <- results_df[1,3]
+GLM["Basic_M1",4] <- results_df[1,4]
+
+CIl <-  confint(test)["scale(PICLORAM)","2.5 %"]
+CIh <- confint(test)["scale(PICLORAM)","97.5 %"]
+GLM["Basic_M1",5] <- as.numeric(CIl)
+GLM["Basic_M1",6] <- as.numeric(CIh)
+GLM["Basic_M1",7] <- paste(table(GW$EOCRC)[2], table(GW$EOCRC)[1], sep= "/")
+
+GWcl <- merge(GW, clinic, by.x="X", by.y="ID")
+
+### Tumor purity
+
+## Tumor purity was obtained from:
+# Genetic Mechanisms of Immune Evasion in Colorectal Cancer 
+# Catherine S. Grasso; Marios Giannakis; Daniel K. Wells; Tsuyoshi Hamada; Xinmeng Jasmine Mu; Michael Quist; Jonathan A. Nowak; Reiko Nishihara; Zhi Rong Qian; Kentaro Inamura;
+# Teppei Morikawa; Katsuhiko Nosho; Gabriel Abril-Rodriguez; Charles Connolly; Helena Escuin-Ordinas; Milan S. Geybels; William M. Grady ;
+# Li Hsu; Siwen Hu-Lieskovan; Jeroen R. Huyghe; Yeon Joo Kim; Paige Krystofinski; Mark D.M. Leiserson; Dennis J. Montoya; Brian B. Nadel; Matteo Pellegrini; Colin C. Pritchard; Cristina Puig-Saus; Elleanor H. Quist; Ben J. Raphael; Stephen J. Salipante; Daniel Sanghoon Shin; Eve Shinbrot; Brian Shirts; Sachet Shukla; Janet L. Stanford; Wei Sun; Jennifer Tsoi; Alexander Upfill-Brown; David A. Wheeler; Catherine J. Wu; Ming Yu; Syed H. Zaidi; Jesse M. Zaretsky; Stacey B. Gabriel; Eric S. Lander; Levi A. Garraway; Thomas J. Hudson; Charles S. Fuchs; Antoni Ribas; Shuji Ogino; Ulrike Peters
+# Cancer Discov (2018) 8 (6): 730–749.
+# https://doi.org/10.1158/2159-8290.CD-17-1327
+
+sub <- GWcl
+
+df <- readr::read_tsv("215982clinic_sup_grassso_cancerDisc18.tsv")
+df <- as.data.frame(df)
+subs <- merge(sub, df,by.y="Sample", by.x="X")
+
+test <- glm(EOCRC ~ scale(PICLORAM) + gender, family = binomial, data = subs) 
+results_df <-summary.glm(test)$coefficients
+results_df <- as.data.frame(t(results_df[2,]))
+GLM["Puritycon_M1",1] <- results_df[1,1]
+GLM["Puritycon_M1",2] <- results_df[1,2]
+GLM["Puritycon_M1",3] <- results_df[1,3]
+GLM["Puritycon_M1",4] <- results_df[1,4]
+
+CIl <-  confint(test)["scale(PICLORAM)","2.5 %"]
+CIh <- confint(test)["scale(PICLORAM)","97.5 %"]
+GLM["Puritycon_M1",5] <- as.numeric(CIl)
+GLM["Puritycon_M1",6] <- as.numeric(CIh)
+GLM["Puritycon_M1",7] <- paste(table(subs$EOCRC)[2], table(subs$EOCRC)[1], sep= "/")
+
+# Adjusted for purity as continous
+test <- glm(EOCRC ~ scale(PICLORAM) + gender + TumorPurity, family = binomial, data = subs) 
+results_df <-summary.glm(test)$coefficients
+results_df <- as.data.frame(t(results_df[2,]))
+GLM["Puritycon_M2",1] <- results_df[1,1]
+GLM["Puritycon_M2",2] <- results_df[1,2]
+GLM["Puritycon_M2",3] <- results_df[1,3]
+GLM["Puritycon_M2",4] <- results_df[1,4]
+
+CIl <-  confint(test)["scale(PICLORAM)","2.5 %"]
+CIh <- confint(test)["scale(PICLORAM)","97.5 %"]
+GLM["Puritycon_M2",5] <- as.numeric(CIl)
+GLM["Puritycon_M2",6] <- as.numeric(CIh)
+GLM["Puritycon_M2",7] <- paste(table(subs$EOCRC)[2], table(subs$EOCRC)[1], sep= "/")
+
+####### Tumor location left/right
+
+sub <- GWcl
+sub <- sub[! sub$subdivision == "[Not Available]"  ,]
+sub <- sub[! sub$subdivision == "[Discrepancy]"  ,]
+sub$subdivision[sub$subdivision == "Cecum"] <- "Left"
+sub$subdivision[sub$subdivision == "Ascending Colon"] <- "Left"
+sub$subdivision[sub$subdivision == "Hepatic Flexure"] <- "Left"
+sub$subdivision[sub$subdivision == "Transverse Colon"] <- "Left"
+
+sub$subdivision[sub$subdivision == "Sigmoid Colon"] <- "Right"
+sub$subdivision[sub$subdivision == "Descending Colon"] <- "Right"
+sub$subdivision[sub$subdivision == "Rectosigmoid Junction"] <- "Right"
+sub$subdivision[sub$subdivision == "Splenic Flexure"] <- "Right"
+subs <- sub[complete.cases(sub$subdivision), ] 
+
+test <- glm(EOCRC ~ scale(PICLORAM) + gender, family = binomial, data = subs) 
+results_df <-summary.glm(test)$coefficients
+results_df <- as.data.frame(t(results_df[2,]))
+GLM["subLR_M1",1] <- results_df[1,1]
+GLM["subLR_M1",2] <- results_df[1,2]
+GLM["subLR_M1",3] <- results_df[1,3]
+GLM["subLR_M1",4] <- results_df[1,4]
+
+CIl <-  confint(test)["scale(PICLORAM)","2.5 %"]
+CIh <- confint(test)["scale(PICLORAM)","97.5 %"]
+GLM["subLR_M1",5] <- as.numeric(CIl)
+GLM["subLR_M1",6] <- as.numeric(CIh)
+GLM["subLR_M1",7] <- paste(table(subs$EOCRC)[2], table(subs$EOCRC)[1], sep= "/")
+
+
+test <- glm(EOCRC ~ scale(PICLORAM) + gender + subdivision, family = binomial, data = subs) 
+results_df <-summary.glm(test)$coefficients
+results_df <- as.data.frame(t(results_df[2,]))
+GLM["subLR_M2",1] <- results_df[1,1]
+GLM["subLR_M2",2] <- results_df[1,2]
+GLM["subLR_M2",3] <- results_df[1,3]
+GLM["subLR_M2",4] <- results_df[1,4]
+
+CIl <-  confint(test)["scale(PICLORAM)","2.5 %"]
+CIh <- confint(test)["scale(PICLORAM)","97.5 %"]
+GLM["subLR_M2",5] <- as.numeric(CIl)
+GLM["subLR_M2",6] <- as.numeric(CIh)
+GLM["subLR_M2",7] <- paste(table(subs$EOCRC)[2], table(subs$EOCRC)[1], sep= "/")
+
+## family_history yes/no
+
+sub <- GWcl
+sub <- sub[! sub$family_history == "[Not Available]"  ,]
+sub <- sub[! sub$family_history == "[Unknown]"  ,]
+sub$family_history[sub$family_history >0 ] <- 1
+
+test <- glm(EOCRC ~ scale(PICLORAM) + gender, family = binomial, data = sub) 
+results_df <-summary.glm(test)$coefficients
+results_df <- as.data.frame(t(results_df[2,]))
+GLM["history_M1",1] <- results_df[1,1]
+GLM["history_M1",2] <- results_df[1,2]
+GLM["history_M1",3] <- results_df[1,3]
+GLM["history_M1",4] <- results_df[1,4]
+
+CIl <-  confint(test)["scale(PICLORAM)","2.5 %"]
+CIh <- confint(test)["scale(PICLORAM)","97.5 %"]
+GLM["history_M1",5] <- as.numeric(CIl)
+GLM["history_M1",6] <- as.numeric(CIh)
+GLM["history_M1",7] <- paste(table(sub$EOCRC)[2], table(sub$EOCRC)[1], sep= "/")
+
+
+test <- glm(EOCRC ~ scale(PICLORAM) + gender + family_history, family = binomial, data = sub) 
+results_df <-summary.glm(test)$coefficients
+results_df <- as.data.frame(t(results_df[2,]))
+GLM["history_M2",1] <- results_df[1,1]
+GLM["history_M2",2] <- results_df[1,2]
+GLM["history_M2",3] <- results_df[1,3]
+GLM["history_M2",4] <- results_df[1,4]
+
+CIl <-  confint(test)["scale(PICLORAM)","2.5 %"]
+CIh <- confint(test)["scale(PICLORAM)","97.5 %"]
+GLM["history_M2",5] <- as.numeric(CIl)
+GLM["history_M2",6] <- as.numeric(CIh)
+GLM["history_M2",7] <- paste(table(sub$EOCRC)[2], table(sub$EOCRC)[1], sep= "/")
+
+
+## Race white/non-white 
+
+sub <- GWcl
+sub <- sub[! sub$race == "[Not Available]"  ,]
+sub$race[sub$race != "WHITE"] <- "NO"
+
+test <- glm(EOCRC ~ scale(PICLORAM) + gender, family = binomial, data = sub) 
+results_df <-summary.glm(test)$coefficients
+results_df <- as.data.frame(t(results_df[2,]))
+GLM["race_M1",1] <- results_df[1,1]
+GLM["race_M1",2] <- results_df[1,2]
+GLM["race_M1",3] <- results_df[1,3]
+GLM["race_M1",4] <- results_df[1,4]
+
+CIl <-  confint(test)["scale(PICLORAM)","2.5 %"]
+CIh <- confint(test)["scale(PICLORAM)","97.5 %"]
+GLM["race_M1",5] <- as.numeric(CIl)
+GLM["race_M1",6] <- as.numeric(CIh)
+GLM["race_M1",7] <- paste(table(sub$EOCRC)[2], table(sub$EOCRC)[1], sep= "/")
+
+
+test <- glm(EOCRC ~ scale(PICLORAM) + gender + race, family = binomial, data = sub) 
+results_df <-summary.glm(test)$coefficients
+results_df <- as.data.frame(t(results_df[2,]))
+GLM["race_M2",1] <- results_df[1,1]
+GLM["race_M2",2] <- results_df[1,2]
+GLM["race_M2",3] <- results_df[1,3]
+GLM["race_M2",4] <- results_df[1,4]
+
+CIl <-  confint(test)["scale(PICLORAM)","2.5 %"]
+CIh <- confint(test)["scale(PICLORAM)","97.5 %"]
+GLM["race_M2",5] <- as.numeric(CIl)
+GLM["race_M2",6] <- as.numeric(CIh)
+GLM["race_M2",7] <- paste(table(sub$EOCRC)[2], table(sub$EOCRC)[1], sep= "/")
+
+### MSI status
+
+# MSI status obtained from: 
+# Genetic Mechanisms of Immune Evasion in Colorectal Cancer 
+# Catherine S. Grasso; Marios Giannakis; Daniel K. Wells; Tsuyoshi Hamada; Xinmeng Jasmine Mu; Michael Quist; Jonathan A. Nowak; Reiko Nishihara; Zhi Rong Qian; Kentaro Inamura;
+# Teppei Morikawa; Katsuhiko Nosho; Gabriel Abril-Rodriguez; Charles Connolly; Helena Escuin-Ordinas; Milan S. Geybels; William M. Grady ;
+# Li Hsu; Siwen Hu-Lieskovan; Jeroen R. Huyghe; Yeon Joo Kim; Paige Krystofinski; Mark D.M. Leiserson; Dennis J. Montoya; Brian B. Nadel; Matteo Pellegrini; Colin C. Pritchard; Cristina Puig-Saus; Elleanor H. Quist; Ben J. Raphael; Stephen J. Salipante; Daniel Sanghoon Shin; Eve Shinbrot; Brian Shirts; Sachet Shukla; Janet L. Stanford; Wei Sun; Jennifer Tsoi; Alexander Upfill-Brown; David A. Wheeler; Catherine J. Wu; Ming Yu; Syed H. Zaidi; Jesse M. Zaretsky; Stacey B. Gabriel; Eric S. Lander; Levi A. Garraway; Thomas J. Hudson; Charles S. Fuchs; Antoni Ribas; Shuji Ogino; Ulrike Peters
+# Cancer Discov (2018) 8 (6): 730–749.
+# https://doi.org/10.1158/2159-8290.CD-17-1327
+
+
+sub <- GWcl
+
+df <- readr::read_tsv("215982clinic_sup_grassso_cancerDisc18.tsv")
+df <- as.data.frame(df)  #[,c("Sample", "TumorPurity")])
+subs <- merge(sub, df,by.y="Sample", by.x="X")
+subs$MsiStatus[subs$MsiStatus == "POLE"] <- NA
+sub <- subs[complete.cases(subs$MsiStatus)  ,]
+
+test <- glm(EOCRC ~ scale(PICLORAM) + gender, family = binomial, data = sub) 
+results_df <-summary.glm(test)$coefficients
+results_df <- as.data.frame(t(results_df[2,]))
+GLM["MSS_M1",1] <- results_df[1,1]
+GLM["MSS_M1",2] <- results_df[1,2]
+GLM["MSS_M1",3] <- results_df[1,3]
+GLM["MSS_M1",4] <- results_df[1,4]
+
+CIl <-  confint(test)["scale(PICLORAM)","2.5 %"]
+CIh <- confint(test)["scale(PICLORAM)","97.5 %"]
+GLM["MSS_M1",5] <- as.numeric(CIl)
+GLM["MSS_M1",6] <- as.numeric(CIh)
+GLM["MSS_M1",7] <- paste(table(sub$EOCRC)[2], table(sub$EOCRC)[1], sep= "/")
+
+
+test <- glm(EOCRC ~ scale(PICLORAM) + gender + MsiStatus, family = binomial, data = sub) 
+results_df <-summary.glm(test)$coefficients
+results_df <- as.data.frame(t(results_df[2,]))
+GLM["MSS_M2",1] <- results_df[1,1]
+GLM["MSS_M2",2] <- results_df[1,2]
+GLM["MSS_M2",3] <- results_df[1,3]
+GLM["MSS_M2",4] <- results_df[1,4]
+
+CIl <-  confint(test)["scale(PICLORAM)","2.5 %"]
+CIh <- confint(test)["scale(PICLORAM)","97.5 %"]
+GLM["MSS_M2",5] <- as.numeric(CIl)
+GLM["MSS_M2",6] <- as.numeric(CIh)
+GLM["MSS_M2",7] <- paste(table(sub$EOCRC)[2], table(sub$EOCRC)[1], sep= "/")
+
+
+comb <- as.data.frame(GLM)
+names(comb) <- c("beta", "se", "z.value", "pvalue", "CI_L","CI_H", "sample") 
+comb <- comb[complete.cases(comb),]
+comb$studynum <- rownames(comb)
+comb$mod <- gsub(".*_","",comb$studynum)
+comb$studynum <- gsub("\\_.*","",comb$studynum)
+
+comb$studynum[comb$studynum == "subLR"] <- "Location"
+comb$studynum[comb$studynum == "history"] <- "Family history"
+comb$studynum[comb$studynum == "race"] <- "Race"
+comb$studynum[comb$studynum == "MSS"] <- "MSS/MSI-H"
+comb$studynum[comb$studynum == "Puritycon"] <- "Tumor Purity"
+
+newggpl <- comb
+newggpl$studynum[newggpl$studynum == "Basic"] <- "Baseline"
+newggpl <- newggpl %>%
+  mutate_at(vars(beta, se, z.value, pvalue, CI_L, CI_H), as.numeric)
+
+m.gen_bin <- metagen(TE = beta,
+                     seTE = se,
+                     lower = CI_L,
+                     upper = CI_H,
+                     studlab = studynum,
+                     data = newggpl,
+                     sm = "OR",
+                     method.tau = "PM",
+                     fixed = FALSE,
+                     random = TRUE#,
+)
+
+# Figure 3e: Adjustment association between piclom and age at onset in COAD 
+
+forest.meta(m.gen_bin, 
+            sortvar = studynum,
+            prediction = F, 
+            print.tau2 = F,
+            leftcols = c("studynum", "mod","sample"),
+            leftlabs = c("Adjustment", "Model", "Early/Late"),
+            hetstat = FALSE,
+            random = F,
+            rightcols = c("effect", "ci"),
+            just.studlab =  c("left"),
+            just.addcols =  c("left"),
+            test.subgroup.random = F,
+            print.subgroup.name = FALSE,
+            col.by = c("black"),
+            calcwidth.random=F,
+            fs.heading= 5,
+            fontsize =5,
+            scientific.pval =T,
+            plotwidth = "2.5cm",
+            colgap.left = "0.15cm",
+            colgap.forest.left="0.0001cm",
+            colgap.forest.right="0.001cm",
+            spacing=0.49,
+            squaresize =0.8, 
+            weight.study = "same", 
+            col.study = c("#802A07FF", "#FFC08AFF", "#7eb1da","#FFC08AFF", "#7eb1da","#FFC08AFF", "#7eb1da","#FFC08AFF", "#7eb1da","#FFC08AFF", "#7eb1da"),
+            col.square = c("#802A07FF", "#FFC08AFF", "#7eb1da","#FFC08AFF", "#7eb1da","#FFC08AFF", "#7eb1da","#FFC08AFF", "#7eb1da","#FFC08AFF", "#7eb1da"), 
+            col.square.lines = "black")
 
 
 

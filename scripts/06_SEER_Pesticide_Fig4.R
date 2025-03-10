@@ -1,6 +1,6 @@
 ### Script to reproduce results of:
 ### Epigenetic Fingerprints Link Early-Onset Colon and Rectal Cancer to Pesticide Exposure  
-### Silvana C.E. Maas, Iosune Baraibar, Odei Blanco Irazuegui, Elena Elez, Jose A. Seoane 
+### Silvana C.E. Maas, Iosune Baraibar, Lea Lemler, Maria Butjosa-Espín, Odei Blanco Irazuegui, Elena Elez, Jose A. Seoane 
 ### author: Silvana C.E. Maas (silvanamaas at vhio.net)
 
 
@@ -241,7 +241,7 @@ comb2$pesticide[comb2$pesticide == "PICLORAM"] <- "Picloram"
 
 
 
-### Figure 4C
+### Figure 4a
 
 ggplot(comb2, aes(x = factor(SEER, levels=c("SEER 8", "SEER 12")), y = pval, fill = SEER)) +
   geom_bar(stat = "identity") +
@@ -262,227 +262,228 @@ ggplot(comb2, aes(x = factor(SEER, levels=c("SEER 8", "SEER 12")), y = pval, fil
 
 
 
+########## 
+
+### Adjusting Glyphosate, Atrazine, and Picloram
+
+# MAKE THE DF WITH RESULTS
+pest <- c("ATR", "ATR_G","ATR_P", "ATR_GP", 
+          "GLYP","GLYP_A", "GLYP_P", "GLYP_AP",
+          "PIC", "PIC_A", "PIC_G", "PIC_AG") 
+
+compesti <- matrix(nrow= length(pest), ncol= 2)
+row.names(compesti) <- pest
+colnames(compesti) <- c("Beta", "Pval")
 
 
-#### Figure 4A
-
-
-# Select the directory where you stored the processed SEER and pesticide data. 
-
-file2 <-  list.files("SEER_pesticide/",  pattern =  "_seer.csv")  # Repeat same for SEE12
-tables <- lapply(file2, read.csv, header = TRUE)
-
-ID <- gsub("\\_.*","",file2)
-tables <- mapply(cbind, tables, "Pesticide"=ID, SIMPLIFY=F)
-comb <- do.call(rbind , tables)
-comb$State <- gsub("\\-.*","",comb$SC)
-comb2 <- comb[,c(1,2,7)]
-
-
+################
 #
-# As the SEER data is not publicly available we have uploaded the files including the 
-# needed pesticide information to replicate figures 4a
+# PICLORAM
 #
-comb2 <- read.csv("Results/SEER_pesticide/inputFig4aSEER8.csv", header=T)
+###############
+
+PICLORAM <- read.csv("PICLORAM_seer.csv", header=T)
+PICLORAM$logArea <- log(PICLORAM$perArea)
+PICLORAM <- PICLORAM %>% filter(between(logArea, 
+                                        quantile(logArea, 0.05), quantile(logArea, 0.95)))
+piclo <- PICLORAM[,c(1,2,3,7)]
+head(piclo)
+names(piclo)[4] <- "logPiclo"
+m3N1 <- lmerTest::lmer(value ~ logPiclo  + variable + (1|SC), piclo)
+summary(m3N1)
 
 
-library(dplyr)
-df_summary <- comb2 %>%
-  group_by(Pesticide, variable) %>%
-  summarize(Counties = n_distinct(SC)) %>%
-  ungroup()
+GLYPHOSATE <- read.csv("GLYPHOSATE_seer.csv", header=T)
+GLYPHOSATE$logArea <- log(GLYPHOSATE$perArea)
+head(GLYPHOSATE)
+glyp <- GLYPHOSATE[,c(1,2,7)]
+names(glyp)[3] <- "logGlyp"
 
-seer8 <- ggplot(df_summary, aes(x = variable, y = Pesticide, fill = Counties)) +
-  geom_tile() + 
-  scale_fill_gradient2(low ="#f3f5f9", mid = "#ccd2e5", high = "#5e6783", midpoint = 95, 
-                       limits = c(55,115), 
-                       breaks = c(55, 75, 95, 115),
-                       labels = c(55, 75, 95, 115),
-                       name = "No. of Counties") +
-  facet_wrap(~ Pesticide, ncol = 1, scales = "free_y") +# Separate plot for each pesticide
-  theme_minimal() +
-  scale_x_continuous(name="Years measured", breaks= seq(1992, 2012, 5)) +
-  
-  labs(title = "SEER 8",
-       x = "Year", 
-       y = "Pesticides", 
-       fill = "No. of Counties")+ 
-  theme(legend.position = c(0.01, -0.4),
-         legend.direction="horizontal",
-        strip.text = element_blank(),
-        plot.title = element_text(hjust = 0.5, vjust = -2, size=5),
-        panel.spacing.y = unit(0.01, "lines"),
-        axis.text=element_text(size=5),
-        axis.text.x = element_text(angle = 45),
-        legend.text=element_text(size=5,angle = 45),
-        legend.title = element_text(size=5),
-        axis.title = element_text(size = 5),
-        legend.box.margin=margin(-5,0,-5,0),
-        legend.key.size = unit(0.25, 'cm'),
-        plot.margin= unit(c(0,0.2,0.7,0.1), "cm")
-        
-  )
+ATRAZINE <- read.csv("ATRAZINE_seer.csv", header=T)
+ATRAZINE$logArea <- log(ATRAZINE$perArea)
+atraz <- ATRAZINE[,c(1,2,7)]
+names(atraz)[3] <- "logAtraz"
+head(atraz)
+
+pesti <- merge(piclo, atraz, by=c("SC", "variable"), all = T)
+pesti3 <- merge(pesti, glyp, by=c("SC", "variable"), all = T)
+pesti3 <- pesti3[complete.cases(pesti3),]
+
+PIC <- lmerTest::lmer(value ~ logPiclo  + variable + (1|SC), pesti3)
+results_df <-summary(PIC)$coefficients
+results_df <- as.data.frame(t(results_df[2,]))
+compesti["PIC",1] <- round(results_df[1,1], digits = 2)
+compesti["PIC",2] <- format(results_df[1,5], scientific = T, digits = 3)
 
 
-## Repeat for the SEER 12 pesticide files
+PICA <- lmerTest::lmer(value ~ logPiclo  + logAtraz  + variable + (1|SC), pesti3)
+results_df <-summary(PICA)$coefficients
+results_df <- as.data.frame(t(results_df[2,]))
+compesti["PIC_A",1] <- round(results_df[1,1], digits = 2)
+compesti["PIC_A",2] <- format(results_df[1,5], scientific = T, digits = 3)
 
+
+PICG <- lmerTest::lmer(value ~ logPiclo  + logGlyp  + variable + (1|SC), pesti3)
+results_df <-summary(PICG)$coefficients
+results_df <- as.data.frame(t(results_df[2,]))
+compesti["PIC_G",1] <- round(results_df[1,1], digits = 2)
+compesti["PIC_G",2] <- format(results_df[1,5], scientific = T, digits = 3)
+
+
+PICAG <- lmerTest::lmer(value ~ logPiclo  + logGlyp + logAtraz + variable + (1|SC), pesti3)
+results_df <-summary(PICAG)$coefficients
+results_df <- as.data.frame(t(results_df[2,]))
+compesti["PIC_AG",1] <- round(results_df[1,1], digits = 2)
+compesti["PIC_AG",2] <- format(results_df[1,5], scientific = T, digits = 3)
+
+###################
 #
-# As the SEER data is not publicly available we have uploaded the files including the 
-# needed pesticide information to replicate figures 4a
+# GLYPHOSATE
 #
-comb12 <- read.csv("Results/SEER_pesticide/inputFig4aSEER12.csv", header=T)
+###################
+
+GLYPHOSATE <- read.csv("GLYPHOSATE_seer.csv", header=T)
+GLYPHOSATE$logArea <- log(GLYPHOSATE$perArea)
+GLYPHOSATE <- GLYPHOSATE %>% filter(between(logArea, 
+                                            quantile(logArea, 0.05), quantile(logArea, 0.95)))
+glyp <- GLYPHOSATE[,c(1,2,3,7)]
+names(glyp)[4] <- "logGlyp"
+
+PICLORAM <- read.csv("PICLORAM_seer.csv", header=T)
+PICLORAM$logArea <- log(PICLORAM$perArea)
+piclo <- PICLORAM[,c(1,2,7)]
+names(piclo)[3] <- "logPiclo"
+
+ATRAZINE <- read.csv("ATRAZINE_seer.csv", header=T)
+ATRAZINE$logArea <- log(ATRAZINE$perArea)
+atraz <- ATRAZINE[,c(1,2,7)]
+names(atraz)[3] <- "logAtraz"
 
 
-library(dplyr)
-df12_summary <- comb12 %>%
-  group_by(Pesticide, variable) %>%
-  summarize(Counties = n_distinct(SC)) %>%
-  ungroup()
+pesti <- merge(piclo, atraz, by=c("SC", "variable"), all = T)
+pesti3 <- merge(pesti, glyp, by=c("SC", "variable"), all = T)
+pesti3 <- pesti3[complete.cases(pesti3), ]
 
 
-seer12 <- 
-  ggplot(df12_summary, aes(x = variable, y = Pesticide, fill = Counties)) +
-  geom_tile() + 
-  scale_fill_gradient2(low ="#FFF5EB", mid = "#FDAE6B", high = "#D08F58", midpoint = 105, 
-                       limits = c(55,115), 
-                       breaks = c(55, 75, 95, 115),
-                       labels = c(55, 75, 95, 115),
-                       name = "No. of Counties") +
-  facet_wrap(~ Pesticide, ncol = 1, scales = "free_y") +# Separate plot for each pesticide
-  theme_minimal() +
-  scale_x_continuous(name="Years measured", breaks= seq(1992, 2012, 5)) +
-  
-  labs(title = "SEER 12",
-       x = "Year", 
-       y = "Pesticides", 
-       fill = "No. of Counties")+ 
-  theme(legend.position = c(0.01, -0.4),
-          legend.direction="horizontal",
-        strip.text = element_blank(),
-        plot.title = element_text(hjust = 0.5, vjust = -2, size=5),
-                panel.spacing.y = unit(0.01, "lines"),
-        axis.text=element_text(size=5),
-        axis.text.x = element_text(angle = 45),
-        legend.text=element_text(size=5,angle = 45),
-        legend.title = element_text(size=5),
-        axis.title = element_text(size = 5),
-        legend.box.margin=margin(-5,0,-5,0),
-        legend.key.size = unit(0.25, 'cm'),
-        plot.margin= unit(c(0,0.2,0.7,0.1), "cm")
-        
-  )
+GLYP <- lmerTest::lmer(value ~ logGlyp  + variable + (1|SC), pesti3)
+results_df <-summary(GLYP)$coefficients
+results_df <- as.data.frame(t(results_df[2,]))
+compesti["GLYP",1] <- round(results_df[1,1], digits = 2)
+compesti["GLYP",2] <- format(results_df[1,5], scientific = T, digits = 3)
 
 
+GLYPA <- lmerTest::lmer(value ~ logGlyp + logAtraz  + variable + (1|SC), pesti3)
+results_df <-summary(GLYPA)$coefficients
+results_df <- as.data.frame(t(results_df[2,]))
+compesti["GLYP_A",1] <- round(results_df[1,1], digits = 2)
+compesti["GLYP_A",2] <- format(results_df[1,5], scientific = T, digits = 3)
 
-## Combine the plots from SEER8 and SEER12 -> Figure 4A
+GLYPP <- lmerTest::lmer(value ~ logGlyp  +  logPiclo + variable + (1|SC), pesti3)
+results_df <-summary(GLYPP)$coefficients
+results_df <- as.data.frame(t(results_df[2,]))
+compesti["GLYP_P",1] <- round(results_df[1,1], digits = 2)
+compesti["GLYP_P",2] <- format(results_df[1,5], scientific = T, digits = 3)
 
-plots8_12 <-cowplot::plot_grid(seer8, seer12, nrow =   1)  
+GLYPAP <- lmerTest::lmer(value ~  logGlyp + logPiclo  + logAtraz + variable + (1|SC), pesti3)
+results_df <-summary(GLYPAP)$coefficients
+results_df <- as.data.frame(t(results_df[2,]))
+compesti["GLYP_AP",1] <- round(results_df[1,1], digits = 2)
+compesti["GLYP_AP",2] <- format(results_df[1,5], scientific = T, digits = 3)
 
 
-
+###################
 #
+# Atrazine
 #
-#
-#   Figure 4b
-#
-#
-#
+###################
+
+ATRAZINE <- read.csv("ATRAZINE_seer.csv", header=T)
+ATRAZINE$logArea <- log(ATRAZINE$perArea)
+ATRAZINE <- ATRAZINE %>% filter(between(logArea, 
+                                        quantile(logArea, 0.05), quantile(logArea, 0.95)))
+atraz <- ATRAZINE[,c(1,2,3,7)]
+names(atraz)[4] <- "logAtraz"
+
+GLYPHOSATE <- read.csv("GLYPHOSATE_seer.csv", header=T)
+GLYPHOSATE$logArea <- log(GLYPHOSATE$perArea)
+glyp <- GLYPHOSATE[,c(1,2,7)]
+names(glyp)[3] <- "logGlyp"
+
+PICLORAM <- read.csv("PICLORAM_seer.csv", header=T)
+PICLORAM$logArea <- log(PICLORAM$perArea)
+piclo <- PICLORAM[,c(1,2,7)]
+names(piclo)[3] <- "logPiclo"
+
+pesti <- merge(piclo, atraz, by=c("SC", "variable"), all = T)
+pesti3 <- merge(pesti, glyp, by=c("SC", "variable"), all = T)
+pesti3 <- pesti3[complete.cases(pesti3), ]
+
+## glyphosate and atrazine are strongly correlated
+ggplot(pesti3, aes(x=logAtraz, y=logGlyp))+
+  geom_point()+
+  stat_cor()+
+  theme_bw()
+
+ATR <- lmerTest::lmer(value ~ logAtraz  + variable + (1|SC), pesti3)
+results_df <-summary(ATR)$coefficients
+results_df <- as.data.frame(t(results_df[2,]))
+compesti["ATR",1] <- round(results_df[1,1], digits = 2)
+compesti["ATR",2] <- format(results_df[1,5], scientific = T, digits = 3)
+
+ATRP <- lmerTest::lmer(value ~ logAtraz + logPiclo  + variable + (1|SC), pesti3)
+results_df <-summary(ATRP)$coefficients
+results_df <- as.data.frame(t(results_df[2,]))
+compesti["ATR_P",1] <- round(results_df[1,1], digits = 2)
+compesti["ATR_P",2] <- format(results_df[1,5], scientific = T, digits = 3)
 
 
-#install.packages("usmap")
-library(usmap) 
-library(dplyr)
-library(ggplot2)
+ATRG <- lmerTest::lmer(value ~  logAtraz + logGlyp  + variable + (1|SC), pesti3)
+results_df <-summary(ATRG)$coefficients
+results_df <- as.data.frame(t(results_df[2,]))
+compesti["ATR_G",1] <- round(results_df[1,1], digits = 2)
+compesti["ATR_G",2] <- format(results_df[1,5], scientific = T, digits = 3)
 
-# As the SEER data used in this plot is not publicly available, we have included random number between 0 and 100 to the age adjusted rates 
+ATRPG <- lmerTest::lmer(value ~  logAtraz + logGlyp  + logPiclo  + variable + (1|SC), pesti3)
+results_df <-summary(ATRPG)$coefficients
+results_df <- as.data.frame(t(results_df[2,]))
+compesti["ATR_GP",1] <- round(results_df[1,1], digits = 2)
+compesti["ATR_GP",2] <- format(results_df[1,5], scientific = T, digits = 3)
 
-i <- "PICLORAM"
-file <- paste0("SEER_pesticide/", i , "_seer.csv")  # File is NOT available -> input your own generated file
-new <- read.csv(file, header=T)
-new$logArea <- log(new$perArea)
-pise3S <- new %>% filter(between(logArea, 
-                                 quantile(logArea, 0.05), quantile(logArea, 0.95)))
+#write.csv(compesti, "Results/SEER_pesticide/SEER8_adjustment.csv")
 
-#pise3S$value <- as.numeric(sample(100, size = nrow(pise3S), replace = TRUE)) -> we included random number between 0 and 100 to the age adjusted rates to reproduce the figure
+pesti <- read.csv("Results/SEER_pesticide/SEER8_adjustment.csv", header=T)
+names(pesti)[1] <- "pesticide"
+pesti$pesti <- gsub("\\_.*","",pesti$pesticide)
+pesti$mod <- gsub(".*_","",pesti$pesticide)
+pesti$Pval <- -log10(pesti$Pval)
 
-pise3S <- read.csv("Results/SEER_pesticide/PICLORAM_seer_Fake.csv", header=T)
+# Figure 6: Pesticide use intensity is associated with early-onset colorectal cancer incidence.
+# Figure 6b
 
-pico <- as.data.frame(aggregate(pise3S$logArea, list(pise3S$SC), FUN=mean))
-value <-  aggregate(pise3S$value, list(pise3S$SC), FUN=mean) 
-mean <- left_join(pico, value, by = "Group.1")
-names(mean) <- c("SC", "logArea", "value")
-mean$State <- gsub("\\-.*","",mean$SC)
-mean$county <- gsub(".*-","",mean$SC)
-
-# Names need to match with the information in the usmap package
-mean$county <- tolower(mean$county) 
-mean$State <- tolower(mean$State)
-SC_pico <- unique(mean$SC)
-states_pico <- unique(mean$State)
-mean$subregion <- mean$county
-mean$subregion[mean$subregion =="dekalb"] <- "de kalb"
-
-state <- map_data("state")
-counties <- map_data("county")
-names(mean)[4] <- "region"
-unicoun <-   counties[,c(5,6)]   
-unicoun$SC <- paste(unicoun$region, unicoun$subregion, sep = "-")
-unicoun <- unicoun[!duplicated(unicoun$SC), ]
-mean$SC2 <- paste(mean$region, mean$subregion, sep = "-")
-Unicoun <- unicoun[! unicoun$SC %in% mean$SC2, ]
-Unicoun$logArea <- 0
-Unicoun$value <- 0
-count <- Unicoun[,c(3,4,5,1,2)]
-mean2 <- mean[,c(7,2,3,4,6)]
-names(mean2)[1] <- "SC" 
-
-Counties_p <- rbind(count, mean2)
-
-States_sub <- subset(state, region %in% states_pico[2])
-counties_sub <- subset(counties, region %in% states_pico[2])
-
-pico.map2 <- merge(counties_sub, Counties_p, by=c("region","subregion"))
-pico.map[pico.map == 0] <- NA
-
-map1 <-  ggplot(data=States_sub, mapping=aes(x=long, y=lat, group=group)) + 
-  coord_fixed(1.5) + 
-  geom_polygon(color="black", fill="white") + 
-  geom_polygon(data=pico.map, 
-               aes(fill = value), 
-               color="white") + 
-  geom_polygon(color="black", fill=NA) +
-   # note that these number are not the same as used in the Figure in the manuscript
-  
-    scale_fill_gradient2(name = "IR eoCRC",  low = "#F7FBFF", mid = "#9ECAE1",  high = "#061746",na.value = "grey95", limits = c(35,65), midpoint = 50, 
-                       breaks = c(35, 50, 65),
-                       labels = c(35, 50, 65))+
-  theme_void()+
-  theme(legend.position = "left", legend.text=element_text(size=5),
-        legend.title = element_text(size=5),legend.key.size = unit(0.15, 'cm'),
-        axis.title.x=element_blank(), axis.text.x=element_blank(), axis.ticks.x=element_blank(),
-        axis.title.y=element_blank(), axis.text.y=element_blank(), axis.ticks.y=element_blank(),
-        legend.box.spacing = unit(-2.5, "pt"))
-map1 
-
-map2 <-   ggplot(data=States_sub, mapping=aes(x=long, y=lat, group=group)) + 
-  coord_fixed(1.5) + 
-  geom_polygon(color="black", fill="white") + 
-  geom_polygon(data=pico.map, aes(fill = logArea), color="white") + 
-  geom_polygon(color="black", fill=NA) +
-  scale_fill_gradient2(name= "Picloram",low = "#FFF5EB", mid = "#D94801", high = "#662105",na.value = "grey95", limits = c(-5,0), midpoint = -2.7,
-                       breaks=c(-5,0),labels=c("low","high"))+
-  theme_void()+ 
-  theme(legend.position = "left", legend.text=element_text(size=5),
-        legend.title = element_text(size=5),legend.key.size = unit(0.15, 'cm'),
-        axis.title.x=element_blank(), axis.text.x=element_blank(), axis.ticks.x=element_blank(),
-        axis.title.y=element_blank(), axis.text.y=element_blank(), axis.ticks.y=element_blank(),
-        legend.box.spacing = unit(-2.5, "pt"))#
-
-map2
-
-plot <-cowplot::plot_grid(map1, map2, ncol =  1)  
-
-# Figure 4b
-plot
+ggplot(pesti, aes(x =factor(pesticide, levels=c("ATR",  "ATR_P", "ATR_G", "ATR_GP", 
+                                                "GLYP","GLYP_P", "GLYP_A", "GLYP_AP", 
+                                                "PIC", "PIC_A",  "PIC_G", "PIC_AG")) ,
+                  y = Pval, fill = mod)) +
+  geom_bar(stat = "identity") +
+  theme_bw()+
+  scale_fill_manual(name = "mod", values = c("G"   =  "#FFC08AFF",     "A"    =  "#D94801", "P"= "#802A07FF", 
+                                             "AG" = "#5F9ED1FF",   "AP"= "#5F9ED1FF",      "GP"= "#5F9ED1FF",    
+                                             "ATR" = "#98A7D4",   "GLYP" = "#98A7D4", "PIC"= "#98A7D4"))+
+  scale_x_discrete(labels = c("ATR"    = "Baseline",     "ATR_P" = "Picloram", "ATR_G" = "Glyphosate", "ATR_GP" = "Combined",
+                              "GLYP"  = "Baseline",     "GLYP_P" = "Picloram", "GLYP_A" = "Atrazine", "GLYP_AP" = "Combined",
+                              "PIC"   = "Baseline",     "PIC_A" = "Atrazine", "PIC_G" = "Glyphosate", "PIC_AG" = "Combined")) +
+  theme(legend.position="none",
+        axis.text.x = element_text(angle = 45, vjust = 1, hjust = 1, size=5),
+        axis.title.y = element_text(size = 5),
+        axis.title.x=element_blank(),
+        axis.text.y = element_text(size=5),
+        panel.grid.major.y = element_blank(), panel.grid.minor.y = element_blank(),
+        strip.placement = "outside", strip.background = element_rect(fill=NA, colour="grey50"),  panel.spacing.x = unit(0.1, "cm"), 
+        strip.text.x = element_text(face = "italic", size = 5, 
+                                    margin = unit(rep(10, 4), "pt")))+
+  labs(y="-log10(P-value)")+ 
+  geom_hline(yintercept=1.3, linetype="dashed", color = "maroon", linewidth=0.5)+
+  ylim(0,5.1)+
+  facet_wrap(nrow=1, vars(factor(pesti, levels= c("GLYP", "ATR", "PIC"), labels = c("Glyphosate", "Atrazine",  "Picloram"))),  scales="free_x")
 
 
