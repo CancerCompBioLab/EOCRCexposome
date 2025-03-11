@@ -235,7 +235,7 @@ tables <- lapply(datasets, read.csv, header = TRUE)
 
 
      
-#Figure 3d: permutation picloram
+#Figure 3f: permutation picloram
     
 PICLORAM <- read.csv("Results/GLM_MRS_perm/perm_GW_COAD_genderPICLORAM.csv", header=T)
 PICLORAM <- PICLORAM[,c(7,4)]
@@ -289,11 +289,11 @@ ggplot(PICLORAM, aes(x= trait, y = Pval, fill= trait)) +
 
     
     
-### Figure S4 permutation 
+### Figure S6 permutation 
 
 #
 #
-#   Permutation CpGs Figure S4a
+#   Permutation CpGs Figure S6a
 #
 #
 
@@ -332,7 +332,7 @@ library(ggplot2)
 comb$Pval <- -log10(comb$Pval)
 sigt <- comb[comb$Label == "MRS",]
 
-### Fig S4a permutation CpGs
+### Fig S6a permutation CpGs
 
 ggplot(comb, aes(x= factor(trait, levels = c("MDS",  "Obesity", "education","smoking_sm13")), y = Pval, fill= trait)) +
   geom_violin(linewidth = 0.2) +
@@ -352,7 +352,7 @@ ggplot(comb, aes(x= factor(trait, levels = c("MDS",  "Obesity", "education","smo
 
 #
 #
-#   Permutation patients Figure S4b
+#   Permutation patients Figure S6b
 #
 #
 
@@ -403,7 +403,7 @@ comb$Pval <- -log10(comb$Pval)
 sigt <- comb[comb$Label == "Model",]
 
 
-### FigS3 permutation patients
+### FigS6 permutation patients
 
 ggplot(comb, aes(x= factor(trait, levels = c("MDS",  "Obesity", "education","smoking_sm13")), y = Pval, fill= trait)) +
   geom_violin(linewidth = 0.2) +
@@ -565,7 +565,7 @@ m.gen_bin <- metagen(TE = beta,
 )
 
 
-### Figure 3c: Adjustments for other MRS-GW
+### Figure 3d: Adjustments for other MRS-GW
 
 
 forest.meta(m.gen_bin, 

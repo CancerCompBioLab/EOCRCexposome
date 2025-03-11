@@ -4,7 +4,7 @@ Scripts to reproduce results of:
 # Epigenetic Fingerprints Link Early-Onset Colon and Rectal Cancer to Pesticide Exposure  
 
 
-Silvana C.E. Maas, Iosune Baraibar, Odei Blanco Irazuegui, Elena Elez, Jose A. Seoane 
+Silvana C.E. Maas, Iosune Baraibar, Lea Lemler, Maria Butjosa-Espín, Odei Blanco Irazuegui, Elena Elez, Jose A. Seoane 
 
 
 
@@ -25,22 +25,23 @@ Downloading, pre-processing, imputing, and horvath clock adjustment for the DNA 
 #### 02_Methylation_Risk_score.R
 Making the MRS scores and association between early- and later-onset, permutation for MRS CpGs and patients, meta-analysis
 
-#### 03_Figure_1_and_SuplFigS3.R    
-Script to make the Overview Figures presented in Figure 1 and supplementary Figure S3
+#### 03_Figure_1_and_SuplFigS4.R    
+Script to make the Overview Figures presented in Figure 1 and supplementary Figure S4
 
 #### 04_Figures_MRS_eoCRC.R
 The heatmap, box plot, and forest plot as presented in Figure 2 and Figure 3a,b,c
-The violinplot for the permutation results as presented in Figure 3d and supplementary Figure S4
+The violinplot for the permutation results as presented in Figure 3f and supplementary Figure S6
+The forestplots for the additional adjustments as presented in Figure 3d and 3e.
 
 
-#### 05_Figure_3_SBS1.R
-Data management and download for the SBS1 analysis and the plots as presented in Figure 3e,f,g  
+#### 05_Figure_5_SBS1.R
+Data management and download for the SBS1 analysis and the plots as presented in Figure 5.  
 
-#### 06_SEER_Pesticide_Fig4.R          
-Data management and download for the pesticide use data, the linear mixed models and the plots presented in Figure 4 
+#### 06_SEER_Pesticide_Fig6.R          
+Data management and download for the pesticide use data, the linear mixed models and the plots presented in Figure 6 
 
-#### 07_Obesity_measured_vs_MRS_FigS1.R
-Plots presented in Supplementary Figure S2 
+#### 07_Score_validation_FS1_FS2.R
+Plots presented in Supplementary Figure S3 and S5 
 
 
 
@@ -68,3 +69,21 @@ All the information needed to generate the same start data sets used in the manu
 
 ## Results
 All the output files generated in ***02_Methylation_Risk_score.R*** that are used to generate all the figures included in the manuscript. 
+
+## Startdata
+
+#### Clinical information for the patients included in COAD <br>
+COAD_clinic.csv       <br>
+Clinic_Coad.csv <br>
+clinic_GW_MSI.csv <br>
+clinic_GW_MSS.csv <br>
+clinic_GW.csv <br>
+
+#### Age adjusted DNA methylation for the patients included in COAD <br>
+COAD_Age_adjusted_DNAm_Bval_overlap_MRSCpGs.rds <br>
+                         
+#### Methylation risk scores- GW generated using non-age adjusted DNA methylation data in COAD <br>
+COAD_GW_MRS_notAdj.csv <br>
+
+#### Tumor mutation burden in COAD, using 38 as standard exon size <br>
+TMB_per38.csv             <br>                     
