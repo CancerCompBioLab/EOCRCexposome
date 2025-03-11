@@ -87,3 +87,21 @@ COAD_GW_MRS_notAdj.csv <br>
 
 #### Tumor mutation burden in COAD, using 38 as standard exon size <br>
 TMB_per38.csv             <br>                     
+<br>
+
+## R packages and software <br>
+TCGABiolinks package v2.25.0 <br>
+GEOquery package v2.60.0 <br>
+sesame package v1.19.7 <br>
+impute package v1.66.0 <br>
+lumi package v2.44.0  <br>
+stats R package v4.1.3 <br>
+metafor R package v4.4-0  <br>
+maftools R package v2.8.5  <br>
+DESeq2 R package v1.44.0  <br>
+fgsea R package v1.20.0  <br>
+lmerTest R package v3.1-3  <br>
+
+Statistical analyses were performed in R v4.1.3  <br>
+SEER*Stat software (version 8.4.1)  <br>
+ <br>
