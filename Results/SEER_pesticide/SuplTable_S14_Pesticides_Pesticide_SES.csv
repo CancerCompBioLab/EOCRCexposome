@@ -1,0 +1,197 @@
+"Pesticide","Adjustment","SES_Adjustment","Effect","P_value","N_obs","N_Years","N_SC"
+"Atrazine","Esfenvalerate","No Adjustment",0.2723,"1.59e-03",1937,21,100
+"Atrazine","Esfenvalerate","Only Pesticide",0.1856,"1.55e-01",1937,21,100
+"Atrazine","Esfenvalerate","Education index",0.1394,"2.82e-01",1937,21,100
+"Atrazine","Esfenvalerate","Household income",0.1653,"2.10e-01",1937,21,100
+"Atrazine","Esfenvalerate","House value",0.137,"3.28e-01",1937,21,100
+"Atrazine","Esfenvalerate","Rent",0.1012,"4.71e-01",1937,21,100
+"Atrazine","Esfenvalerate","150% poverty (%)",0.2045,"1.26e-01",1937,21,100
+"Atrazine","Esfenvalerate","Unemployed (%)",0.255,"7.40e-02",1937,21,100
+"Atrazine","Esfenvalerate","Working class (%)",0.161,"2.33e-01",1937,21,100
+"Atrazine","Esfenvalerate",NA,0.1394,"2.82e-01",1937,21,100
+"Atrazine","Glyphosate","No Adjustment",0.2707,"8.95e-04",2013,21,102
+"Atrazine","Glyphosate","Only Pesticide",0.0029,"9.86e-01",2013,21,102
+"Atrazine","Glyphosate","Education index",-0.054,"7.39e-01",2013,21,102
+"Atrazine","Glyphosate","Household income",0.0055,"9.73e-01",2013,21,102
+"Atrazine","Glyphosate","House value",-0.0019,"9.91e-01",2013,21,102
+"Atrazine","Glyphosate","Rent",-6e-04,"9.97e-01",2013,21,102
+"Atrazine","Glyphosate","150% poverty (%)",0.0176,"9.15e-01",2013,21,102
+"Atrazine","Glyphosate","Unemployed (%)",0.0478,"7.71e-01",2013,21,102
+"Atrazine","Glyphosate","Working class (%)",0.0029,"9.86e-01",2013,21,102
+"Atrazine","Glyphosate",NA,-0.054,"7.39e-01",2013,21,102
+"Atrazine","Nicosulfuron","No Adjustment",0.4203,"2.44e-05",1704,21,100
+"Atrazine","Nicosulfuron","Only Pesticide",0.137,"5.18e-01",1704,21,100
+"Atrazine","Nicosulfuron","Education index",0.0911,"6.68e-01",1704,21,100
+"Atrazine","Nicosulfuron","Household income",0.1358,"5.22e-01",1704,21,100
+"Atrazine","Nicosulfuron","House value",0.1284,"5.50e-01",1704,21,100
+"Atrazine","Nicosulfuron","Rent",0.1179,"5.80e-01",1704,21,100
+"Atrazine","Nicosulfuron","150% poverty (%)",0.1459,"4.93e-01",1704,21,100
+"Atrazine","Nicosulfuron","Unemployed (%)",0.1808,"3.98e-01",1704,21,100
+"Atrazine","Nicosulfuron","Working class (%)",0.1358,"5.22e-01",1704,21,100
+"Atrazine","Nicosulfuron",NA,0.0911,"6.68e-01",1704,21,100
+"Atrazine","Picloram","No Adjustment",0.276,"1.39e-03",1831,21,102
+"Atrazine","Picloram","Only Pesticide",0.2601,"4.70e-03",1831,21,102
+"Atrazine","Picloram","Education index",0.238,"7.74e-03",1831,21,102
+"Atrazine","Picloram","Household income",0.2645,"3.78e-03",1831,21,102
+"Atrazine","Picloram","House value",0.2292,"1.84e-02",1831,21,102
+"Atrazine","Picloram","Rent",0.2036,"3.52e-02",1831,21,102
+"Atrazine","Picloram","150% poverty (%)",0.2931,"3.84e-03",1831,21,102
+"Atrazine","Picloram","Unemployed (%)",0.3332,"2.13e-03",1831,21,102
+"Atrazine","Picloram","Working class (%)",0.2405,"1.03e-02",1831,21,102
+"Atrazine","Picloram",NA,0.238,"7.74e-03",1831,21,102
+"Esfenvalerate","Atrazine","No Adjustment",0.4475,"3.12e-04",1931,21,99
+"Esfenvalerate","Atrazine","Only Pesticide",0.2393,"1.95e-01",1931,21,99
+"Esfenvalerate","Atrazine","Education index",0.261,"1.52e-01",1931,21,99
+"Esfenvalerate","Atrazine","Household income",0.2844,"1.31e-01",1931,21,99
+"Esfenvalerate","Atrazine","House value",0.2765,"1.38e-01",1931,21,99
+"Esfenvalerate","Atrazine","Rent",0.3128,"9.41e-02",1931,21,99
+"Esfenvalerate","Atrazine","150% poverty (%)",0.2546,"1.70e-01",1931,21,99
+"Esfenvalerate","Atrazine","Unemployed (%)",0.2442,"1.85e-01",1931,21,99
+"Esfenvalerate","Atrazine","Working class (%)",0.2582,"1.64e-01",1931,21,99
+"Esfenvalerate","Atrazine",NA,0.276,"1.40e-01",1931,21,99
+"Esfenvalerate","Glyphosate","No Adjustment",0.4451,"2.96e-04",1961,21,100
+"Esfenvalerate","Glyphosate","Only Pesticide",0.1568,"3.53e-01",1961,21,100
+"Esfenvalerate","Glyphosate","Education index",0.1522,"3.59e-01",1961,21,100
+"Esfenvalerate","Glyphosate","Household income",0.1971,"2.57e-01",1961,21,100
+"Esfenvalerate","Glyphosate","House value",0.1771,"3.01e-01",1961,21,100
+"Esfenvalerate","Glyphosate","Rent",0.2163,"2.11e-01",1961,21,100
+"Esfenvalerate","Glyphosate","150% poverty (%)",0.1838,"2.85e-01",1961,21,100
+"Esfenvalerate","Glyphosate","Unemployed (%)",0.181,"2.84e-01",1961,21,100
+"Esfenvalerate","Glyphosate","Working class (%)",0.1719,"3.15e-01",1961,21,100
+"Esfenvalerate","Glyphosate",NA,0.1522,"3.59e-01",1961,21,100
+"Esfenvalerate","Nicosulfuron","No Adjustment",0.5724,"5.49e-05",1680,21,98
+"Esfenvalerate","Nicosulfuron","Only Pesticide",0.2348,"2.29e-01",1680,21,98
+"Esfenvalerate","Nicosulfuron","Education index",0.2132,"2.71e-01",1680,21,98
+"Esfenvalerate","Nicosulfuron","Household income",0.2517,"2.04e-01",1680,21,98
+"Esfenvalerate","Nicosulfuron","House value",0.2473,"2.07e-01",1680,21,98
+"Esfenvalerate","Nicosulfuron","Rent",0.2804,"1.54e-01",1680,21,98
+"Esfenvalerate","Nicosulfuron","150% poverty (%)",0.2442,"2.13e-01",1680,21,98
+"Esfenvalerate","Nicosulfuron","Unemployed (%)",0.2348,"2.29e-01",1680,21,98
+"Esfenvalerate","Nicosulfuron","Working class (%)",0.2429,"2.16e-01",1680,21,98
+"Esfenvalerate","Nicosulfuron",NA,0.2132,"2.71e-01",1680,21,98
+"Esfenvalerate","Picloram","No Adjustment",0.4484,"6.21e-04",1752,21,99
+"Esfenvalerate","Picloram","Only Pesticide",0.4182,"2.18e-03",1752,21,99
+"Esfenvalerate","Picloram","Education index",0.4008,"2.30e-03",1752,21,99
+"Esfenvalerate","Picloram","Household income",0.4669,"6.59e-04",1752,21,99
+"Esfenvalerate","Picloram","House value",0.3825,"4.85e-03",1752,21,99
+"Esfenvalerate","Picloram","Rent",0.3734,"5.14e-03",1752,21,99
+"Esfenvalerate","Picloram","150% poverty (%)",0.4483,"2.44e-03",1752,21,99
+"Esfenvalerate","Picloram","Unemployed (%)",0.4567,"2.25e-03",1752,21,99
+"Esfenvalerate","Picloram","Working class (%)",0.3941,"4.00e-03",1752,21,99
+"Esfenvalerate","Picloram",NA,0.382,"3.89e-03",1752,21,99
+"Glyphosate","Atrazine","No Adjustment",0.4867,"1.68e-05",2014,21,104
+"Glyphosate","Atrazine","Only Pesticide",0.4769,"2.36e-02",2014,21,104
+"Glyphosate","Atrazine","Education index",0.5213,"1.29e-02",2014,21,104
+"Glyphosate","Atrazine","Household income",0.4746,"2.45e-02",2014,21,104
+"Glyphosate","Atrazine","House value",0.459,"3.11e-02",2014,21,104
+"Glyphosate","Atrazine","Rent",0.434,"4.31e-02",2014,21,104
+"Glyphosate","Atrazine","150% poverty (%)",0.4833,"2.21e-02",2014,21,104
+"Glyphosate","Atrazine","Unemployed (%)",0.5231,"1.47e-02",2014,21,104
+"Glyphosate","Atrazine","Working class (%)",0.4719,"2.71e-02",2014,21,104
+"Glyphosate","Atrazine",NA,0.5213,"1.29e-02",2014,21,104
+"Glyphosate","Esfenvalerate","No Adjustment",0.4907,"2.88e-05",1972,21,103
+"Glyphosate","Esfenvalerate","Only Pesticide",0.3652,"2.02e-02",1972,21,103
+"Glyphosate","Esfenvalerate","Education index",0.3211,"3.75e-02",1972,21,103
+"Glyphosate","Esfenvalerate","Household income",0.3386,"3.49e-02",1972,21,103
+"Glyphosate","Esfenvalerate","House value",0.3179,"5.97e-02",1972,21,103
+"Glyphosate","Esfenvalerate","Rent",0.2532,"1.46e-01",1972,21,103
+"Glyphosate","Esfenvalerate","150% poverty (%)",0.3812,"1.64e-02",1972,21,103
+"Glyphosate","Esfenvalerate","Unemployed (%)",0.4395,"9.94e-03",1972,21,103
+"Glyphosate","Esfenvalerate","Working class (%)",0.3425,"4.07e-02",1972,21,103
+"Glyphosate","Esfenvalerate",NA,0.3211,"3.75e-02",1972,21,103
+"Glyphosate","Nicosulfuron","No Adjustment",0.6525,"1.14e-06",1703,21,102
+"Glyphosate","Nicosulfuron","Only Pesticide",0.441,"5.06e-02",1703,21,102
+"Glyphosate","Nicosulfuron","Education index",0.4295,"5.51e-02",1703,21,102
+"Glyphosate","Nicosulfuron","Household income",0.4431,"5.03e-02",1703,21,102
+"Glyphosate","Nicosulfuron","House value",0.434,"6.16e-02",1703,21,102
+"Glyphosate","Nicosulfuron","Rent",0.398,"8.68e-02",1703,21,102
+"Glyphosate","Nicosulfuron","150% poverty (%)",0.443,"4.97e-02",1703,21,102
+"Glyphosate","Nicosulfuron","Unemployed (%)",0.4943,"3.08e-02",1703,21,102
+"Glyphosate","Nicosulfuron","Working class (%)",0.4537,"4.73e-02",1703,21,102
+"Glyphosate","Nicosulfuron",NA,0.4295,"5.51e-02",1703,21,102
+"Glyphosate","Picloram","No Adjustment",0.5013,"1.74e-05",1860,21,103
+"Glyphosate","Picloram","Only Pesticide",0.5126,"3.37e-05",1860,21,103
+"Glyphosate","Picloram","Education index",0.489,"3.53e-05",1860,21,103
+"Glyphosate","Picloram","Household income",0.5188,"2.40e-05",1860,21,103
+"Glyphosate","Picloram","House value",0.4692,"2.51e-04",1860,21,103
+"Glyphosate","Picloram","Rent",0.4338,"9.27e-04",1860,21,103
+"Glyphosate","Picloram","150% poverty (%)",0.5764,"2.04e-05",1860,21,103
+"Glyphosate","Picloram","Unemployed (%)",0.6336,"1.17e-05",1860,21,103
+"Glyphosate","Picloram","Working class (%)",0.4921,"1.11e-04",1860,21,103
+"Glyphosate","Picloram",NA,0.489,"3.53e-05",1860,21,103
+"Nicosulfuron","Atrazine","No Adjustment",0.4956,"5.86e-07",1691,21,95
+"Nicosulfuron","Atrazine","Only Pesticide",0.2976,"1.59e-01",1691,21,95
+"Nicosulfuron","Atrazine","Education index",0.3165,"1.34e-01",1691,21,95
+"Nicosulfuron","Atrazine","Household income",0.3007,"1.55e-01",1691,21,95
+"Nicosulfuron","Atrazine","House value",0.2998,"1.56e-01",1691,21,95
+"Nicosulfuron","Atrazine","Rent",0.2873,"1.76e-01",1691,21,95
+"Nicosulfuron","Atrazine","150% poverty (%)",0.3024,"1.55e-01",1691,21,95
+"Nicosulfuron","Atrazine","Unemployed (%)",0.3721,"8.47e-02",1691,21,95
+"Nicosulfuron","Atrazine","Working class (%)",0.3046,"1.51e-01",1691,21,95
+"Nicosulfuron","Esfenvalerate","No Adjustment",0.5035,"7.49e-07",1671,21,95
+"Nicosulfuron","Esfenvalerate","Only Pesticide",0.4309,"2.02e-03",1671,21,95
+"Nicosulfuron","Esfenvalerate","Education index",0.4059,"3.58e-03",1671,21,95
+"Nicosulfuron","Esfenvalerate","Household income",0.4356,"2.30e-03",1671,21,95
+"Nicosulfuron","Esfenvalerate","House value",0.4243,"4.29e-03",1671,21,95
+"Nicosulfuron","Esfenvalerate","Rent",0.3887,"1.04e-02",1671,21,95
+"Nicosulfuron","Esfenvalerate","150% poverty (%)",0.4359,"2.22e-03",1671,21,95
+"Nicosulfuron","Esfenvalerate","Unemployed (%)",0.5322,"5.66e-04",1671,21,95
+"Nicosulfuron","Esfenvalerate","Working class (%)",0.4373,"2.45e-03",1671,21,95
+"Nicosulfuron","Glyphosate","No Adjustment",0.4958,"5.65e-07",1693,21,95
+"Nicosulfuron","Glyphosate","Only Pesticide",0.3347,"5.47e-02",1693,21,95
+"Nicosulfuron","Glyphosate","Education index",0.3094,"7.59e-02",1693,21,95
+"Nicosulfuron","Glyphosate","Household income",0.334,"5.55e-02",1693,21,95
+"Nicosulfuron","Glyphosate","House value",0.3355,"5.44e-02",1693,21,95
+"Nicosulfuron","Glyphosate","Rent",0.3328,"5.64e-02",1693,21,95
+"Nicosulfuron","Glyphosate","150% poverty (%)",0.3388,"5.60e-02",1693,21,95
+"Nicosulfuron","Glyphosate","Unemployed (%)",0.3987,"2.50e-02",1693,21,95
+"Nicosulfuron","Glyphosate","Working class (%)",0.3359,"5.41e-02",1693,21,95
+"Nicosulfuron","Picloram","No Adjustment",0.5285,"7.41e-07",1535,21,94
+"Nicosulfuron","Picloram","Only Pesticide",0.4867,"1.12e-05",1535,21,94
+"Nicosulfuron","Picloram","Education index",0.4707,"1.87e-05",1535,21,94
+"Nicosulfuron","Picloram","Household income",0.4891,"1.02e-05",1535,21,94
+"Nicosulfuron","Picloram","House value",0.4714,"4.24e-05",1535,21,94
+"Nicosulfuron","Picloram","Rent",0.4411,"1.31e-04",1535,21,94
+"Nicosulfuron","Picloram","150% poverty (%)",0.5267,"2.48e-05",1535,21,94
+"Nicosulfuron","Picloram","Unemployed (%)",0.617,"4.33e-06",1535,21,94
+"Nicosulfuron","Picloram","Working class (%)",0.4803,"1.95e-05",1535,21,94
+"Picloram","Atrazine","No Adjustment",0.5255,"5.68e-04",1830,21,94
+"Picloram","Atrazine","Only Pesticide",0.3625,"2.49e-02",1830,21,94
+"Picloram","Atrazine","Education index",0.3238,"4.38e-02",1830,21,94
+"Picloram","Atrazine","Household income",0.3541,"2.84e-02",1830,21,94
+"Picloram","Atrazine","House value",0.3489,"3.32e-02",1830,21,94
+"Picloram","Atrazine","Rent",0.3395,"3.54e-02",1830,21,94
+"Picloram","Atrazine","150% poverty (%)",0.3512,"3.10e-02",1830,21,94
+"Picloram","Atrazine","Unemployed (%)",0.3618,"2.50e-02",1830,21,94
+"Picloram","Atrazine","Working class (%)",0.3637,"2.44e-02",1830,21,94
+"Picloram","Atrazine",NA,0.3238,"4.38e-02",1830,21,94
+"Picloram","Esfenvalerate","No Adjustment",0.5498,"4.41e-04",1750,21,92
+"Picloram","Esfenvalerate","Only Pesticide",0.4433,"6.35e-03",1750,21,92
+"Picloram","Esfenvalerate","Education index",0.3918,"1.51e-02",1750,21,92
+"Picloram","Esfenvalerate","Household income",0.4251,"8.66e-03",1750,21,92
+"Picloram","Esfenvalerate","House value",0.3919,"1.86e-02",1750,21,92
+"Picloram","Esfenvalerate","Rent",0.3767,"2.08e-02",1750,21,92
+"Picloram","Esfenvalerate","150% poverty (%)",0.4407,"6.78e-03",1750,21,92
+"Picloram","Esfenvalerate","Unemployed (%)",0.4504,"5.81e-03",1750,21,92
+"Picloram","Esfenvalerate","Working class (%)",0.438,"6.95e-03",1750,21,92
+"Picloram","Esfenvalerate",NA,0.3751,"2.10e-02",1750,21,92
+"Picloram","Glyphosate","No Adjustment",0.5303,"4.52e-04",1857,21,94
+"Picloram","Glyphosate","Only Pesticide",0.3379,"3.51e-02",1857,21,94
+"Picloram","Glyphosate","Education index",0.2832,"7.55e-02",1857,21,94
+"Picloram","Glyphosate","Household income",0.3267,"4.14e-02",1857,21,94
+"Picloram","Glyphosate","House value",0.3222,"4.73e-02",1857,21,94
+"Picloram","Glyphosate","Rent",0.324,"4.27e-02",1857,21,94
+"Picloram","Glyphosate","150% poverty (%)",0.3195,"4.79e-02",1857,21,94
+"Picloram","Glyphosate","Unemployed (%)",0.3335,"3.70e-02",1857,21,94
+"Picloram","Glyphosate","Working class (%)",0.3402,"3.39e-02",1857,21,94
+"Picloram","Glyphosate",NA,0.2832,"7.55e-02",1857,21,94
+"Picloram","Nicosulfuron","No Adjustment",0.6629,"1.55e-04",1557,21,92
+"Picloram","Nicosulfuron","Only Pesticide",0.4753,"7.48e-03",1557,21,92
+"Picloram","Nicosulfuron","Education index",0.4326,"1.44e-02",1557,21,92
+"Picloram","Nicosulfuron","Household income",0.4638,"9.02e-03",1557,21,92
+"Picloram","Nicosulfuron","House value",0.4484,"1.32e-02",1557,21,92
+"Picloram","Nicosulfuron","Rent",0.443,"1.25e-02",1557,21,92
+"Picloram","Nicosulfuron","150% poverty (%)",0.449,"1.22e-02",1557,21,92
+"Picloram","Nicosulfuron","Unemployed (%)",0.48,"6.86e-03",1557,21,92
+"Picloram","Nicosulfuron","Working class (%)",0.4793,"7.04e-03",1557,21,92
+"Picloram","Nicosulfuron",NA,0.4326,"1.44e-02",1557,21,92

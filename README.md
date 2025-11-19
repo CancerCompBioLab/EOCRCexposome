@@ -25,12 +25,12 @@ Downloading, pre-processing, imputing, and horvath clock adjustment for the DNA 
 #### 02_Methylation_Risk_score.R
 Making the MRS scores and association between early- and later-onset, permutation for MRS CpGs and patients, meta-analysis
 
-#### 03_Figure_1_and_SuplFigS4.R    
-Script to make the Overview Figures presented in Figure 1 and supplementary Figure S4
+#### 03_Figures_Heatmap_ResultOvervies.R    
+Script to make the Overview Figures presented in Figure 1 and supplementary Figure S6
 
 #### 04_Figures_MRS_eoCRC.R
 The heatmap, box plot, and forest plot as presented in Figure 2 and Figure 3a,b,c
-The violinplot for the permutation results as presented in Figure 3f and supplementary Figure S6
+The violinplot for the permutation results as presented in Figure 3f and supplementary Figure S8
 The forestplots for the additional adjustments as presented in Figure 3d and 3e.
 
 
@@ -41,7 +41,13 @@ Data management and download for the SBS1 analysis and the plots as presented in
 Data management and download for the pesticide use data, the linear mixed models and the plots presented in Figure 6 
 
 #### 07_Score_validation_FS1_FS2.R
-Plots presented in Supplementary Figure S3 and S5 
+Validation of the MRSs using publicly available data sets. Plots presented in Supplementary Figure S1, S2, and S3 
+
+#### 08_Fig_4_Molecular_differences_HL_Picloram.R
+Comparing the 1st  with the 3rd tertile picloram MRS to identify difference in mutations (Figure 4a-d) and gene expression (Figure 4e), and pathway enrichment (Figure 4f) 
+
+#### 09_Pesticide_IPC_ssGSEA.R
+Gene expression differences due to pesticide exposure in IPCs and the ssGSEA in TCGA-COAD vs the MRS, including permutation tesing (Figure 3f and e).
 
 
 
@@ -68,7 +74,7 @@ All the information needed to generate the same start data sets used in the manu
 
 
 ## Results
-All the output files generated in ***02_Methylation_Risk_score.R*** that are used to generate all the figures included in the manuscript. 
+All the output files generated in the scripts that are used to generate all the figures included in the manuscript. 
 
 ## Startdata
 

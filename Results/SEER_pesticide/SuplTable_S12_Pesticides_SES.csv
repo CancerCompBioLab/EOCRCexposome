@@ -1,0 +1,497 @@
+"Pesticide","SES_Adjusted","Effect","P_value","N","N_SC","N_Time"
+"Alachlor","No Adjustment",0.2744,"2.25e-03",1903,99,21
+"Alachlor","Education index",0.2485,"4.50e-03",1903,99,21
+"Alachlor","Household income",0.2745,"2.27e-03",1903,99,21
+"Alachlor","House value",0.2301,"1.86e-02",1903,99,21
+"Alachlor","Rent",0.2169,"2.35e-02",1903,99,21
+"Alachlor","150% poverty (%)",0.2767,"4.06e-03",1903,99,21
+"Alachlor","Unemployed (%)",0.3009,"4.96e-03",1903,99,21
+"Alachlor","Working class (%)",0.2563,"5.47e-03",1903,99,21
+"Atrazine","No Adjustment",0.2707,"8.95e-04",2013,102,21
+"Atrazine","Education index",0.2375,"2.88e-03",2013,102,21
+"Atrazine","Household income",0.2687,"9.80e-04",2013,102,21
+"Atrazine","House value",0.245,"5.71e-03",2013,102,21
+"Atrazine","Rent",0.2268,"9.93e-03",2013,102,21
+"Atrazine","150% poverty (%)",0.2862,"1.02e-03",2013,102,21
+"Atrazine","Unemployed (%)",0.3331,"5.61e-04",2013,102,21
+"Atrazine","Working class (%)",0.2583,"2.07e-03",2013,102,21
+"Bentazone","No Adjustment",0.2427,"1.32e-02",1765,92,21
+"Bentazone","Education index",0.2219,"2.12e-02",1765,92,21
+"Bentazone","Household income",0.2432,"1.27e-02",1765,92,21
+"Bentazone","House value",0.2167,"3.10e-02",1765,92,21
+"Bentazone","Rent",0.189,"6.00e-02",1765,92,21
+"Bentazone","150% poverty (%)",0.2709,"1.08e-02",1765,92,21
+"Bentazone","Unemployed (%)",0.262,"2.20e-02",1765,92,21
+"Bentazone","Working class (%)",0.2211,"3.02e-02",1765,92,21
+"Carbaryl","No Adjustment",0.2793,"1.74e-02",2038,103,21
+"Carbaryl","Education index",0.2887,"1.05e-02",2038,103,21
+"Carbaryl","Household income",0.3035,"1.02e-02",2038,103,21
+"Carbaryl","House value",0.26,"2.61e-02",2038,103,21
+"Carbaryl","Rent",0.2516,"3.00e-02",2038,103,21
+"Carbaryl","150% poverty (%)",0.2885,"2.39e-02",2038,103,21
+"Carbaryl","Unemployed (%)",0.2673,"3.87e-02",2038,103,21
+"Carbaryl","Working class (%)",0.2693,"2.16e-02",2038,103,21
+"Carbofuran","No Adjustment",0.3156,"1.81e-02",1728,102,19
+"Carbofuran","Education index",0.2603,"4.80e-02",1728,102,19
+"Carbofuran","Household income",0.3122,"2.00e-02",1728,102,19
+"Carbofuran","House value",0.2464,"7.98e-02",1728,102,19
+"Carbofuran","Rent",0.2221,"1.14e-01",1728,102,19
+"Carbofuran","150% poverty (%)",0.3013,"2.58e-02",1728,102,19
+"Carbofuran","Unemployed (%)",0.3142,"3.18e-02",1728,102,19
+"Carbofuran","Working class (%)",0.2864,"3.67e-02",1728,102,19
+"Chlorothalonil","No Adjustment",0.2654,"2.04e-02",1969,103,21
+"Chlorothalonil","Education index",0.3419,"2.15e-03",1969,103,21
+"Chlorothalonil","Household income",0.3479,"4.36e-03",1969,103,21
+"Chlorothalonil","House value",0.3238,"4.76e-03",1969,103,21
+"Chlorothalonil","Rent",0.3522,"1.95e-03",1969,103,21
+"Chlorothalonil","150% poverty (%)",0.2643,"3.23e-02",1969,103,21
+"Chlorothalonil","Unemployed (%)",0.2465,"3.80e-02",1969,103,21
+"Chlorothalonil","Working class (%)",0.2827,"1.36e-02",1969,103,21
+"Chlorpyrifos","No Adjustment",0.2979,"2.52e-02",2068,104,21
+"Chlorpyrifos","Education index",0.26,"4.35e-02",2068,104,21
+"Chlorpyrifos","Household income",0.2965,"2.57e-02",2068,104,21
+"Chlorpyrifos","House value",0.2498,"6.64e-02",2068,104,21
+"Chlorpyrifos","Rent",0.2146,"1.20e-01",2068,104,21
+"Chlorpyrifos","150% poverty (%)",0.2919,"3.85e-02",2068,104,21
+"Chlorpyrifos","Unemployed (%)",0.3134,"4.38e-02",2068,104,21
+"Chlorpyrifos","Working class (%)",0.2453,"7.29e-02",2068,104,21
+"Clethodim","No Adjustment",0.2891,"2.51e-02",1699,99,21
+"Clethodim","Education index",0.2462,"5.22e-02",1699,99,21
+"Clethodim","Household income",0.278,"3.28e-02",1699,99,21
+"Clethodim","House value",0.2081,"1.38e-01",1699,99,21
+"Clethodim","Rent",0.1608,"2.57e-01",1699,99,21
+"Clethodim","150% poverty (%)",0.2848,"3.29e-02",1699,99,21
+"Clethodim","Unemployed (%)",0.2896,"5.43e-02",1699,99,21
+"Clethodim","Working class (%)",0.2624,"4.92e-02",1699,99,21
+"Clopyralid","No Adjustment",0.3174,"2.64e-03",1935,103,21
+"Clopyralid","Education index",0.2811,"6.66e-03",1935,103,21
+"Clopyralid","Household income",0.3101,"3.64e-03",1935,103,21
+"Clopyralid","House value",0.2688,"1.69e-02",1935,103,21
+"Clopyralid","Rent",0.2422,"3.64e-02",1935,103,21
+"Clopyralid","150% poverty (%)",0.3158,"3.38e-03",1935,103,21
+"Clopyralid","Unemployed (%)",0.371,"1.71e-03",1935,103,21
+"Clopyralid","Working class (%)",0.2816,"1.17e-02",1935,103,21
+"Cyanazine","No Adjustment",0.3365,"1.79e-02",953,75,16
+"Cyanazine","Education index",0.3363,"1.67e-02",953,75,16
+"Cyanazine","Household income",0.3346,"1.91e-02",953,75,16
+"Cyanazine","House value",0.3404,"2.32e-02",953,75,16
+"Cyanazine","Rent",0.3068,"3.90e-02",953,75,16
+"Cyanazine","150% poverty (%)",0.3121,"4.82e-02",953,75,16
+"Cyanazine","Unemployed (%)",0.3232,"7.23e-02",953,75,16
+"Cyanazine","Working class (%)",0.3224,"2.90e-02",953,75,16
+"Cyfluthrin","No Adjustment",0.3981,"6.64e-03",1582,99,21
+"Cyfluthrin","Education index",0.3329,"2.21e-02",1582,99,21
+"Cyfluthrin","Household income",0.3889,"8.52e-03",1582,99,21
+"Cyfluthrin","House value",0.3655,"1.89e-02",1582,99,21
+"Cyfluthrin","Rent",0.3356,"3.40e-02",1582,99,21
+"Cyfluthrin","150% poverty (%)",0.4004,"7.99e-03",1582,99,21
+"Cyfluthrin","Unemployed (%)",0.4852,"3.22e-03",1582,99,21
+"Cyfluthrin","Working class (%)",0.3593,"1.92e-02",1582,99,21
+"Cyhalothrinlambda","No Adjustment",0.4148,"7.59e-03",1706,100,21
+"Cyhalothrinlambda","Education index",0.3763,"1.29e-02",1706,100,21
+"Cyhalothrinlambda","Household income",0.4224,"6.57e-03",1706,100,21
+"Cyhalothrinlambda","House value",0.3467,"3.04e-02",1706,100,21
+"Cyhalothrinlambda","Rent",0.3228,"4.27e-02",1706,100,21
+"Cyhalothrinlambda","150% poverty (%)",0.427,"9.31e-03",1706,100,21
+"Cyhalothrinlambda","Unemployed (%)",0.4962,"5.44e-03",1706,100,21
+"Cyhalothrinlambda","Working class (%)",0.3769,"1.78e-02",1706,100,21
+"Diazinon","No Adjustment",0.3426,"1.52e-02",1730,103,21
+"Diazinon","Education index",0.4129,"3.29e-03",1730,103,21
+"Diazinon","Household income",0.3878,"7.19e-03",1730,103,21
+"Diazinon","House value",0.3654,"9.29e-03",1730,103,21
+"Diazinon","Rent",0.3777,"6.98e-03",1730,103,21
+"Diazinon","150% poverty (%)",0.3429,"1.95e-02",1730,103,21
+"Diazinon","Unemployed (%)",0.3258,"2.41e-02",1730,103,21
+"Diazinon","Working class (%)",0.3441,"1.46e-02",1730,103,21
+"Dicamba","No Adjustment",0.3371,"8.03e-03",2049,103,21
+"Dicamba","Education index",0.2637,"3.73e-02",2049,103,21
+"Dicamba","Household income",0.3242,"1.28e-02",2049,103,21
+"Dicamba","House value",0.2667,"6.09e-02",2049,103,21
+"Dicamba","Rent",0.2139,"1.45e-01",2049,103,21
+"Dicamba","150% poverty (%)",0.331,"1.01e-02",2049,103,21
+"Dicamba","Unemployed (%)",0.3629,"1.03e-02",2049,103,21
+"Dicamba","Working class (%)",0.3177,"1.81e-02",2049,103,21
+"Difenzoquat","No Adjustment",-0.4021,"4.54e-02",299,19,19
+"Difenzoquat","Education index",-0.2717,"2.49e-01",299,19,19
+"Difenzoquat","Household income",-0.3874,"6.46e-02",299,19,19
+"Difenzoquat","House value",-0.3926,"5.30e-02",299,19,19
+"Difenzoquat","Rent",-0.3987,"4.87e-02",299,19,19
+"Difenzoquat","150% poverty (%)",-0.3125,"1.48e-01",299,19,19
+"Difenzoquat","Unemployed (%)",-0.2353,"2.94e-01",299,19,19
+"Difenzoquat","Working class (%)",-0.3954,"6.48e-02",299,19,19
+"Dimethoate","No Adjustment",0.2889,"3.86e-02",2021,104,21
+"Dimethoate","Education index",0.2487,"6.76e-02",2021,104,21
+"Dimethoate","Household income",0.2865,"4.03e-02",2021,104,21
+"Dimethoate","House value",0.2616,"6.16e-02",2021,104,21
+"Dimethoate","Rent",0.2338,"9.80e-02",2021,104,21
+"Dimethoate","150% poverty (%)",0.2899,"4.18e-02",2021,104,21
+"Dimethoate","Unemployed (%)",0.2865,"5.73e-02",2021,104,21
+"Dimethoate","Working class (%)",0.2651,"6.29e-02",2021,104,21
+"Diuron","No Adjustment",-0.254,"3.59e-02",1550,83,21
+"Diuron","Education index",-0.1955,"1.13e-01",1550,83,21
+"Diuron","Household income",-0.2378,"5.69e-02",1550,83,21
+"Diuron","House value",-0.1869,"1.38e-01",1550,83,21
+"Diuron","Rent",-0.169,"1.85e-01",1550,83,21
+"Diuron","150% poverty (%)",-0.2522,"3.75e-02",1550,83,21
+"Diuron","Unemployed (%)",-0.2438,"4.56e-02",1550,83,21
+"Diuron","Working class (%)",-0.2408,"4.96e-02",1550,83,21
+"Eptc","No Adjustment",0.202,"4.74e-02",1688,96,21
+"Eptc","Education index",0.189,"5.70e-02",1688,96,21
+"Eptc","Household income",0.2011,"4.90e-02",1688,96,21
+"Eptc","House value",0.1771,"8.37e-02",1688,96,21
+"Eptc","Rent",0.1674,"1.03e-01",1688,96,21
+"Eptc","150% poverty (%)",0.1901,"7.19e-02",1688,96,21
+"Eptc","Unemployed (%)",0.1681,"1.26e-01",1688,96,21
+"Eptc","Working class (%)",0.1806,"8.62e-02",1688,96,21
+"Esfenvalerate","No Adjustment",0.4451,"2.96e-04",1961,100,21
+"Esfenvalerate","Education index",0.4126,"4.87e-04",1961,100,21
+"Esfenvalerate","Household income",0.4704,"1.34e-04",1961,100,21
+"Esfenvalerate","House value",0.4162,"7.31e-04",1961,100,21
+"Esfenvalerate","Rent",0.4036,"9.14e-04",1961,100,21
+"Esfenvalerate","150% poverty (%)",0.4699,"3.44e-04",1961,100,21
+"Esfenvalerate","Unemployed (%)",0.475,"4.67e-04",1961,100,21
+"Esfenvalerate","Working class (%)",0.4259,"5.53e-04",1961,100,21
+"Ethalfluralin","No Adjustment",0.2174,"3.00e-02",1729,93,21
+"Ethalfluralin","Education index",0.2048,"3.79e-02",1729,93,21
+"Ethalfluralin","Household income",0.2266,"2.44e-02",1729,93,21
+"Ethalfluralin","House value",0.2029,"4.26e-02",1729,93,21
+"Ethalfluralin","Rent",0.192,"5.40e-02",1729,93,21
+"Ethalfluralin","150% poverty (%)",0.2231,"3.94e-02",1729,93,21
+"Ethalfluralin","Unemployed (%)",0.1999,"6.92e-02",1729,93,21
+"Ethalfluralin","Working class (%)",0.194,"5.68e-02",1729,93,21
+"Fenoxaprop","No Adjustment",0.6181,"3.65e-03",1188,63,21
+"Fenoxaprop","Education index",0.5262,"1.17e-02",1188,63,21
+"Fenoxaprop","Household income",0.6107,"3.69e-03",1188,63,21
+"Fenoxaprop","House value",0.4511,"5.13e-02",1188,63,21
+"Fenoxaprop","Rent",0.4654,"3.41e-02",1188,63,21
+"Fenoxaprop","150% poverty (%)",0.6436,"2.95e-03",1188,63,21
+"Fenoxaprop","Unemployed (%)",0.6312,"7.49e-03",1188,63,21
+"Fenoxaprop","Working class (%)",0.6065,"4.28e-03",1188,63,21
+"Fluazifop","No Adjustment",0.2537,"1.82e-02",1388,76,21
+"Fluazifop","Education index",0.2252,"3.97e-02",1388,76,21
+"Fluazifop","Household income",0.2609,"1.86e-02",1388,76,21
+"Fluazifop","House value",0.2919,"2.47e-02",1388,76,21
+"Fluazifop","Rent",0.2034,"1.14e-01",1388,76,21
+"Fluazifop","150% poverty (%)",0.2426,"2.62e-02",1388,76,21
+"Fluazifop","Unemployed (%)",0.265,"3.47e-02",1388,76,21
+"Fluazifop","Working class (%)",0.241,"3.28e-02",1388,76,21
+"Glyphosate","No Adjustment",0.4869,"5.09e-06",2114,106,21
+"Glyphosate","Education index",0.4343,"2.57e-05",2114,106,21
+"Glyphosate","Household income",0.48,"7.82e-06",2114,106,21
+"Glyphosate","House value",0.4578,"5.52e-05",2114,106,21
+"Glyphosate","Rent",0.4309,"2.36e-04",2114,106,21
+"Glyphosate","150% poverty (%)",0.5059,"5.57e-06",2114,106,21
+"Glyphosate","Unemployed (%)",0.5665,"3.53e-06",2114,106,21
+"Glyphosate","Working class (%)",0.4753,"2.49e-05",2114,106,21
+"Hexazinone","No Adjustment",-0.3223,"2.94e-02",848,43,21
+"Hexazinone","Education index",-0.301,"4.01e-02",848,43,21
+"Hexazinone","Household income",-0.3096,"3.69e-02",848,43,21
+"Hexazinone","House value",-0.3213,"3.05e-02",848,43,21
+"Hexazinone","Rent",-0.3244,"2.92e-02",848,43,21
+"Hexazinone","150% poverty (%)",-0.3083,"3.39e-02",848,43,21
+"Hexazinone","Unemployed (%)",-0.2259,"1.17e-01",848,43,21
+"Hexazinone","Working class (%)",-0.3198,"3.16e-02",848,43,21
+"Imazethapyr","No Adjustment",0.3173,"3.81e-03",1694,89,21
+"Imazethapyr","Education index",0.2746,"1.01e-02",1694,89,21
+"Imazethapyr","Household income",0.3163,"3.65e-03",1694,89,21
+"Imazethapyr","House value",0.2518,"2.79e-02",1694,89,21
+"Imazethapyr","Rent",0.2228,"5.08e-02",1694,89,21
+"Imazethapyr","150% poverty (%)",0.3439,"3.62e-03",1694,89,21
+"Imazethapyr","Unemployed (%)",0.4034,"1.73e-03",1694,89,21
+"Imazethapyr","Working class (%)",0.2937,"8.51e-03",1694,89,21
+"Lactofen","No Adjustment",0.4636,"1.74e-02",1149,60,21
+"Lactofen","Education index",0.4133,"3.70e-02",1149,60,21
+"Lactofen","Household income",0.443,"2.70e-02",1149,60,21
+"Lactofen","House value",0.423,"6.94e-02",1149,60,21
+"Lactofen","Rent",0.2751,"2.18e-01",1149,60,21
+"Lactofen","150% poverty (%)",0.4643,"1.83e-02",1149,60,21
+"Lactofen","Unemployed (%)",0.4881,"2.24e-02",1149,60,21
+"Lactofen","Working class (%)",0.4555,"2.45e-02",1149,60,21
+"Linuron","No Adjustment",0.2323,"3.59e-02",1188,77,21
+"Linuron","Education index",0.1841,"1.05e-01",1188,77,21
+"Linuron","Household income",0.2423,"3.24e-02",1188,77,21
+"Linuron","House value",0.2402,"4.11e-02",1188,77,21
+"Linuron","Rent",0.1991,"9.74e-02",1188,77,21
+"Linuron","150% poverty (%)",0.2137,"5.69e-02",1188,77,21
+"Linuron","Unemployed (%)",0.182,"1.45e-01",1188,77,21
+"Linuron","Working class (%)",0.2206,"5.94e-02",1188,77,21
+"Methylparathion","No Adjustment",0.2108,"3.83e-02",1554,97,21
+"Methylparathion","Education index",0.1871,"5.86e-02",1554,97,21
+"Methylparathion","Household income",0.2196,"2.98e-02",1554,97,21
+"Methylparathion","House value",0.1681,"1.04e-01",1554,97,21
+"Methylparathion","Rent",0.1526,"1.38e-01",1554,97,21
+"Methylparathion","150% poverty (%)",0.222,"3.86e-02",1554,97,21
+"Methylparathion","Unemployed (%)",0.1601,"1.65e-01",1554,97,21
+"Methylparathion","Working class (%)",0.1751,"9.24e-02",1554,97,21
+"Metolachlor","No Adjustment",0.3169,"5.58e-04",1664,100,21
+"Metolachlor","Education index",0.2971,"1.27e-03",1664,100,21
+"Metolachlor","Household income",0.316,"6.01e-04",1664,100,21
+"Metolachlor","House value",0.296,"3.20e-03",1664,100,21
+"Metolachlor","Rent",0.2639,"7.32e-03",1664,100,21
+"Metolachlor","150% poverty (%)",0.2998,"2.35e-03",1664,100,21
+"Metolachlor","Unemployed (%)",0.3546,"1.80e-03",1664,100,21
+"Metolachlor","Working class (%)",0.3027,"1.47e-03",1664,100,21
+"Nicosulfuron","No Adjustment",0.4958,"5.65e-07",1693,95,21
+"Nicosulfuron","Education index",0.4678,"2.23e-06",1693,95,21
+"Nicosulfuron","Household income",0.4996,"6.01e-07",1693,95,21
+"Nicosulfuron","House value",0.4945,"4.45e-06",1693,95,21
+"Nicosulfuron","Rent",0.47,"1.39e-05",1693,95,21
+"Nicosulfuron","150% poverty (%)",0.4998,"2.02e-06",1693,95,21
+"Nicosulfuron","Unemployed (%)",0.596,"5.65e-07",1693,95,21
+"Nicosulfuron","Working class (%)",0.5035,"8.45e-07",1693,95,21
+"Norflurazon","No Adjustment",0.3977,"9.46e-03",500,27,21
+"Norflurazon","Education index",0.3858,"1.20e-02",500,27,21
+"Norflurazon","Household income",0.2529,"1.38e-01",500,27,21
+"Norflurazon","House value",0.3545,"2.44e-02",500,27,21
+"Norflurazon","Rent",0.342,"3.33e-02",500,27,21
+"Norflurazon","150% poverty (%)",0.2356,"1.55e-01",500,27,21
+"Norflurazon","Unemployed (%)",0.3402,"3.63e-02",500,27,21
+"Norflurazon","Working class (%)",0.3152,"4.66e-02",500,27,21
+"Paraquat","No Adjustment",0.2819,"2.02e-02",2046,103,21
+"Paraquat","Education index",0.262,"2.37e-02",2046,103,21
+"Paraquat","Household income",0.2844,"1.89e-02",2046,103,21
+"Paraquat","House value",0.2423,"5.04e-02",2046,103,21
+"Paraquat","Rent",0.2178,"8.21e-02",2046,103,21
+"Paraquat","150% poverty (%)",0.2925,"2.55e-02",2046,103,21
+"Paraquat","Unemployed (%)",0.3177,"2.75e-02",2046,103,21
+"Paraquat","Working class (%)",0.2586,"3.79e-02",2046,103,21
+"Pendimethalin","No Adjustment",0.2727,"3.75e-03",2038,103,21
+"Pendimethalin","Education index",0.2348,"1.18e-02",2038,103,21
+"Pendimethalin","Household income",0.2698,"4.26e-03",2038,103,21
+"Pendimethalin","House value",0.238,"1.60e-02",2038,103,21
+"Pendimethalin","Rent",0.2153,"2.95e-02",2038,103,21
+"Pendimethalin","150% poverty (%)",0.2695,"6.20e-03",2038,103,21
+"Pendimethalin","Unemployed (%)",0.2844,"7.63e-03",2038,103,21
+"Pendimethalin","Working class (%)",0.2503,"1.00e-02",2038,103,21
+"Permethrin","No Adjustment",0.26,"2.46e-02",2008,103,21
+"Permethrin","Education index",0.2218,"4.96e-02",2008,103,21
+"Permethrin","Household income",0.2615,"2.40e-02",2008,103,21
+"Permethrin","House value",0.231,"5.17e-02",2008,103,21
+"Permethrin","Rent",0.1978,"9.69e-02",2008,103,21
+"Permethrin","150% poverty (%)",0.2469,"4.14e-02",2008,103,21
+"Permethrin","Unemployed (%)",0.2545,"5.16e-02",2008,103,21
+"Permethrin","Working class (%)",0.2352,"4.64e-02",2008,103,21
+"Picloram","No Adjustment",0.5303,"4.52e-04",1857,94,21
+"Picloram","Education index",0.475,"1.56e-03",1857,94,21
+"Picloram","Household income",0.5253,"5.03e-04",1857,94,21
+"Picloram","House value",0.46,"3.33e-03",1857,94,21
+"Picloram","Rent",0.4455,"3.44e-03",1857,94,21
+"Picloram","150% poverty (%)",0.5265,"5.10e-04",1857,94,21
+"Picloram","Unemployed (%)",0.5176,"7.89e-04",1857,94,21
+"Picloram","Working class (%)",0.515,"6.53e-04",1857,94,21
+"Primisulfuron","No Adjustment",0.4442,"1.65e-02",1229,64,21
+"Primisulfuron","Education index",0.4418,"1.69e-02",1229,64,21
+"Primisulfuron","Household income",0.4484,"1.73e-02",1229,64,21
+"Primisulfuron","House value",0.4465,"2.47e-02",1229,64,21
+"Primisulfuron","Rent",0.368,"6.41e-02",1229,64,21
+"Primisulfuron","150% poverty (%)",0.4152,"2.90e-02",1229,64,21
+"Primisulfuron","Unemployed (%)",0.4755,"2.41e-02",1229,64,21
+"Primisulfuron","Working class (%)",0.4321,"2.46e-02",1229,64,21
+"Propargite","No Adjustment",-0.3192,"2.67e-03",762,42,21
+"Propargite","Education index",-0.3106,"2.73e-03",762,42,21
+"Propargite","Household income",-0.3109,"3.39e-03",762,42,21
+"Propargite","House value",-0.3212,"2.63e-03",762,42,21
+"Propargite","Rent",-0.3215,"2.62e-03",762,42,21
+"Propargite","150% poverty (%)",-0.3129,"2.57e-03",762,42,21
+"Propargite","Unemployed (%)",-0.2471,"1.56e-02",762,42,21
+"Propargite","Working class (%)",-0.3195,"2.82e-03",762,42,21
+"Sethoxydim","No Adjustment",0.34,"1.58e-03",1919,102,21
+"Sethoxydim","Education index",0.3132,"3.12e-03",1919,102,21
+"Sethoxydim","Household income",0.3374,"1.79e-03",1919,102,21
+"Sethoxydim","House value",0.3176,"4.25e-03",1919,102,21
+"Sethoxydim","Rent",0.2904,"8.85e-03",1919,102,21
+"Sethoxydim","150% poverty (%)",0.3332,"2.60e-03",1919,102,21
+"Sethoxydim","Unemployed (%)",0.3259,"4.66e-03",1919,102,21
+"Sethoxydim","Working class (%)",0.3295,"3.04e-03",1919,102,21
+"Simazine","No Adjustment",0.3969,"2.36e-04",1752,95,21
+"Simazine","Education index",0.319,"2.78e-03",1752,95,21
+"Simazine","Household income",0.3926,"2.75e-04",1752,95,21
+"Simazine","House value",0.3638,"1.11e-03",1752,95,21
+"Simazine","Rent",0.3394,"2.31e-03",1752,95,21
+"Simazine","150% poverty (%)",0.4224,"1.82e-04",1752,95,21
+"Simazine","Unemployed (%)",0.4197,"7.11e-04",1752,95,21
+"Simazine","Working class (%)",0.3881,"3.61e-04",1752,95,21
+"Sulfosate","No Adjustment",1.9536,"4.61e-02",512,49,11
+"Sulfosate","Education index",1.9566,"4.54e-02",512,49,11
+"Sulfosate","Household income",1.9011,"5.46e-02",512,49,11
+"Sulfosate","House value",1.9513,"4.89e-02",512,49,11
+"Sulfosate","Rent",1.8045,"6.62e-02",512,49,11
+"Sulfosate","150% poverty (%)",1.9717,"4.45e-02",512,49,11
+"Sulfosate","Unemployed (%)",1.968,"4.53e-02",512,49,11
+"Sulfosate","Working class (%)",1.9581,"4.60e-02",512,49,11
+"Tefluthrin","No Adjustment",0.3163,"2.35e-02",1372,73,21
+"Tefluthrin","Education index",0.3012,"3.37e-02",1372,73,21
+"Tefluthrin","Household income",0.3147,"2.59e-02",1372,73,21
+"Tefluthrin","House value",0.2867,"6.09e-02",1372,73,21
+"Tefluthrin","Rent",0.2278,"1.40e-01",1372,73,21
+"Tefluthrin","150% poverty (%)",0.2839,"4.77e-02",1372,73,21
+"Tefluthrin","Unemployed (%)",0.2509,"1.17e-01",1372,73,21
+"Tefluthrin","Working class (%)",0.3082,"3.28e-02",1372,73,21
+"Terbufos","No Adjustment",0.3445,"4.66e-03",1527,87,21
+"Terbufos","Education index",0.3377,"4.72e-03",1527,87,21
+"Terbufos","Household income",0.3454,"4.63e-03",1527,87,21
+"Terbufos","House value",0.3196,"1.12e-02",1527,87,21
+"Terbufos","Rent",0.2982,"1.71e-02",1527,87,21
+"Terbufos","150% poverty (%)",0.337,"1.21e-02",1527,87,21
+"Terbufos","Unemployed (%)",0.3857,"8.21e-03",1527,87,21
+"Terbufos","Working class (%)",0.3293,"7.72e-03",1527,87,21
+"Thifensulfuron","No Adjustment",0.3066,"4.08e-02",1624,87,21
+"Thifensulfuron","Education index",0.3423,"1.64e-02",1624,87,21
+"Thifensulfuron","Household income",0.3175,"3.40e-02",1624,87,21
+"Thifensulfuron","House value",0.247,"1.06e-01",1624,87,21
+"Thifensulfuron","Rent",0.2216,"1.44e-01",1624,87,21
+"Thifensulfuron","150% poverty (%)",0.3223,"5.27e-02",1624,87,21
+"Thifensulfuron","Unemployed (%)",0.3915,"2.66e-02",1624,87,21
+"Thifensulfuron","Working class (%)",0.2969,"4.84e-02",1624,87,21
+"Thiodicarb","No Adjustment",0.6707,"4.58e-03",201,12,21
+"Thiodicarb","Education index",0.4455,"5.54e-02",201,12,21
+"Thiodicarb","Household income",0.5166,"2.48e-02",201,12,21
+"Thiodicarb","House value",0.6291,"8.94e-03",201,12,21
+"Thiodicarb","Rent",0.6421,"6.41e-03",201,12,21
+"Thiodicarb","150% poverty (%)",0.4648,"5.14e-02",201,12,21
+"Thiodicarb","Unemployed (%)",0.8384,"8.02e-04",201,12,21
+"Thiodicarb","Working class (%)",0.3811,"1.18e-01",201,12,21
+"Triallate","No Adjustment",-0.3511,"4.67e-02",381,21,21
+"Triallate","Education index",-0.2962,"1.13e-01",381,21,21
+"Triallate","Household income",-0.3626,"5.22e-02",381,21,21
+"Triallate","House value",-0.3476,"6.04e-02",381,21,21
+"Triallate","Rent",-0.3353,"7.30e-02",381,21,21
+"Triallate","150% poverty (%)",-0.3269,"8.51e-02",381,21,21
+"Triallate","Unemployed (%)",-0.2528,"1.73e-01",381,21,21
+"Triallate","Working class (%)",-0.3522,"5.44e-02",381,21,21
+"Zetacypermethrin","No Adjustment",0.3949,"2.62e-02",1071,93,21
+"Zetacypermethrin","Education index",0.3358,"5.50e-02",1071,93,21
+"Zetacypermethrin","Household income",0.3977,"2.39e-02",1071,93,21
+"Zetacypermethrin","House value",0.3483,"5.35e-02",1071,93,21
+"Zetacypermethrin","Rent",0.268,"1.46e-01",1071,93,21
+"Zetacypermethrin","150% poverty (%)",0.5142,"7.59e-03",1071,93,21
+"Zetacypermethrin","Unemployed (%)",0.5581,"7.35e-03",1071,93,21
+"Zetacypermethrin","Working class (%)",0.3401,"6.19e-02",1071,93,21
+"Dimethenamid","No Adjustment",0.2781,"1.35e-03",1554,98,20
+"Dimethenamid","Education index",0.2593,"2.91e-03",1554,98,20
+"Dimethenamid","Household income",0.2771,"1.46e-03",1554,98,20
+"Dimethenamid","House value",0.2709,"4.74e-03",1554,98,20
+"Dimethenamid","Rent",0.2317,"1.44e-02",1554,98,20
+"Dimethenamid","150% poverty (%)",0.2714,"3.60e-03",1554,98,20
+"Dimethenamid","Unemployed (%)",0.3163,"2.80e-03",1554,98,20
+"Dimethenamid","Working class (%)",0.2794,"1.81e-03",1554,98,20
+"Fenbuconazole","No Adjustment",0.5241,"1.38e-02",359,24,18
+"Fenbuconazole","Education index",0.6227,"2.20e-03",359,24,18
+"Fenbuconazole","Household income",0.4385,"2.92e-02",359,24,18
+"Fenbuconazole","House value",0.5137,"1.12e-02",359,24,18
+"Fenbuconazole","Rent",0.5087,"1.37e-02",359,24,18
+"Fenbuconazole","150% poverty (%)",0.4227,"1.44e-02",359,24,18
+"Fenbuconazole","Unemployed (%)",0.5189,"1.47e-02",359,24,18
+"Fenbuconazole","Working class (%)",0.4547,"3.16e-02",359,24,18
+"Flumetsulam","No Adjustment",0.4021,"3.06e-02",1121,63,19
+"Flumetsulam","Education index",0.4012,"3.12e-02",1121,63,19
+"Flumetsulam","Household income",0.429,"2.67e-02",1121,63,19
+"Flumetsulam","House value",0.4551,"2.69e-02",1121,63,19
+"Flumetsulam","Rent",0.3543,"9.19e-02",1121,63,19
+"Flumetsulam","150% poverty (%)",0.3818,"4.42e-02",1121,63,19
+"Flumetsulam","Unemployed (%)",0.501,"1.76e-02",1121,63,19
+"Flumetsulam","Working class (%)",0.3846,"4.72e-02",1121,63,19
+"Acetochlor","No Adjustment",0.3572,"2.10e-04",1453,87,19
+"Acetochlor","Education index",0.35,"2.21e-04",1453,87,19
+"Acetochlor","Household income",0.3567,"2.30e-04",1453,87,19
+"Acetochlor","House value",0.3639,"4.29e-04",1453,87,19
+"Acetochlor","Rent",0.3324,"1.28e-03",1453,87,19
+"Acetochlor","150% poverty (%)",0.3518,"1.13e-03",1453,87,19
+"Acetochlor","Unemployed (%)",0.4428,"2.31e-04",1453,87,19
+"Acetochlor","Working class (%)",0.3481,"5.47e-04",1453,87,19
+"Imidacloprid","No Adjustment",0.3674,"6.52e-03",1325,80,19
+"Imidacloprid","Education index",0.3893,"3.20e-03",1325,80,19
+"Imidacloprid","Household income",0.4016,"3.36e-03",1325,80,19
+"Imidacloprid","House value",0.3736,"5.17e-03",1325,80,19
+"Imidacloprid","Rent",0.3868,"3.61e-03",1325,80,19
+"Imidacloprid","150% poverty (%)",0.3727,"6.46e-03",1325,80,19
+"Imidacloprid","Unemployed (%)",0.3503,"1.08e-02",1325,80,19
+"Imidacloprid","Working class (%)",0.3887,"3.92e-03",1325,80,19
+"Rimsulfuron","No Adjustment",0.3305,"1.21e-02",1388,87,18
+"Rimsulfuron","Education index",0.3068,"1.82e-02",1388,87,18
+"Rimsulfuron","Household income",0.3329,"1.23e-02",1388,87,18
+"Rimsulfuron","House value",0.3121,"2.81e-02",1388,87,18
+"Rimsulfuron","Rent",0.3088,"3.10e-02",1388,87,18
+"Rimsulfuron","150% poverty (%)",0.3276,"1.88e-02",1388,87,18
+"Rimsulfuron","Unemployed (%)",0.4807,"1.59e-03",1388,87,18
+"Rimsulfuron","Working class (%)",0.3067,"2.38e-02",1388,87,18
+"Glufosinate","No Adjustment",0.3286,"3.51e-03",1195,80,17
+"Glufosinate","Education index",0.2909,"1.41e-02",1195,80,17
+"Glufosinate","Household income",0.3316,"4.59e-03",1195,80,17
+"Glufosinate","House value",0.3648,"6.09e-03",1195,80,17
+"Glufosinate","Rent",0.2959,"2.95e-02",1195,80,17
+"Glufosinate","150% poverty (%)",0.317,"5.39e-03",1195,80,17
+"Glufosinate","Unemployed (%)",0.3801,"5.18e-03",1195,80,17
+"Glufosinate","Working class (%)",0.3437,"4.31e-03",1195,80,17
+"Pyriproxyfen","No Adjustment",1.3411,"2.44e-02",161,12,15
+"Pyriproxyfen","Education index",1.1567,"7.44e-02",161,12,15
+"Pyriproxyfen","Household income",1.3704,"3.03e-02",161,12,15
+"Pyriproxyfen","House value",1.3752,"2.36e-02",161,12,15
+"Pyriproxyfen","Rent",1.3654,"3.08e-02",161,12,15
+"Pyriproxyfen","150% poverty (%)",1.0384,"1.35e-01",161,12,15
+"Pyriproxyfen","Unemployed (%)",1.1653,"7.29e-02",161,12,15
+"Pyriproxyfen","Working class (%)",1.261,"4.40e-02",161,12,15
+"Tebupirimphos","No Adjustment",0.6386,"7.30e-03",878,55,17
+"Tebupirimphos","Education index",0.6808,"4.48e-03",878,55,17
+"Tebupirimphos","Household income",0.6998,"4.44e-03",878,55,17
+"Tebupirimphos","House value",0.6467,"6.67e-03",878,55,17
+"Tebupirimphos","Rent",0.5721,"1.40e-02",878,55,17
+"Tebupirimphos","150% poverty (%)",0.7404,"1.64e-02",878,55,17
+"Tebupirimphos","Unemployed (%)",0.8876,"1.98e-03",878,55,17
+"Tebupirimphos","Working class (%)",0.6359,"7.88e-03",878,55,17
+"Aviglycine","No Adjustment",0.6766,"1.34e-02",281,20,16
+"Aviglycine","Education index",0.6221,"2.63e-02",281,20,16
+"Aviglycine","Household income",0.6034,"5.57e-02",281,20,16
+"Aviglycine","House value",0.7043,"1.03e-02",281,20,16
+"Aviglycine","Rent",0.7206,"1.08e-02",281,20,16
+"Aviglycine","150% poverty (%)",0.4031,"2.13e-01",281,20,16
+"Aviglycine","Unemployed (%)",0.4249,"1.44e-01",281,20,16
+"Aviglycine","Working class (%)",0.5873,"4.92e-02",281,20,16
+"Cyprodinil","No Adjustment",0.4951,"1.92e-02",303,22,15
+"Cyprodinil","Education index",0.5,"1.82e-02",303,22,15
+"Cyprodinil","Household income",0.498,"3.00e-02",303,22,15
+"Cyprodinil","House value",0.5161,"1.55e-02",303,22,15
+"Cyprodinil","Rent",0.558,"1.07e-02",303,22,15
+"Cyprodinil","150% poverty (%)",0.3556,"1.34e-01",303,22,15
+"Cyprodinil","Unemployed (%)",0.3011,"1.98e-01",303,22,15
+"Cyprodinil","Working class (%)",0.4448,"4.71e-02",303,22,15
+"Fluroxypyr","No Adjustment",-0.3886,"4.51e-02",340,28,15
+"Fluroxypyr","Education index",-0.3939,"4.52e-02",340,28,15
+"Fluroxypyr","Household income",-0.3969,"4.30e-02",340,28,15
+"Fluroxypyr","House value",-0.3585,"6.52e-02",340,28,15
+"Fluroxypyr","Rent",-0.3679,"5.36e-02",340,28,15
+"Fluroxypyr","150% poverty (%)",-0.4125,"3.61e-02",340,28,15
+"Fluroxypyr","Unemployed (%)",-0.3398,"9.79e-02",340,28,15
+"Fluroxypyr","Working class (%)",-0.3821,"4.95e-02",340,28,15
+"Diflufenzopyr","No Adjustment",0.5711,"1.66e-03",1084,84,14
+"Diflufenzopyr","Education index",0.5396,"2.68e-03",1084,84,14
+"Diflufenzopyr","Household income",0.5634,"2.08e-03",1084,84,14
+"Diflufenzopyr","House value",0.5285,"6.94e-03",1084,84,14
+"Diflufenzopyr","Rent",0.4854,"1.36e-02",1084,84,14
+"Diflufenzopyr","150% poverty (%)",0.5606,"3.65e-03",1084,84,14
+"Diflufenzopyr","Unemployed (%)",0.6419,"1.66e-03",1084,84,14
+"Diflufenzopyr","Working class (%)",0.58,"2.02e-03",1084,84,14
+"Trifloxystrobin","No Adjustment",0.5428,"1.14e-02",609,51,13
+"Trifloxystrobin","Education index",0.5452,"1.00e-02",609,51,13
+"Trifloxystrobin","Household income",0.5297,"1.37e-02",609,51,13
+"Trifloxystrobin","House value",0.4918,"2.36e-02",609,51,13
+"Trifloxystrobin","Rent",0.4622,"3.38e-02",609,51,13
+"Trifloxystrobin","150% poverty (%)",0.5319,"1.39e-02",609,51,13
+"Trifloxystrobin","Unemployed (%)",0.4387,"5.77e-02",609,51,13
+"Trifloxystrobin","Working class (%)",0.5251,"1.45e-02",609,51,13
+"Dimethenamidp","No Adjustment",0.2769,"3.93e-02",945,81,13
+"Dimethenamidp","Education index",0.2216,"9.98e-02",945,81,13
+"Dimethenamidp","Household income",0.265,"4.58e-02",945,81,13
+"Dimethenamidp","House value",0.1897,"2.19e-01",945,81,13
+"Dimethenamidp","Rent",0.1394,"3.65e-01",945,81,13
+"Dimethenamidp","150% poverty (%)",0.372,"9.30e-03",945,81,13
+"Dimethenamidp","Unemployed (%)",0.4131,"8.15e-03",945,81,13
+"Dimethenamidp","Working class (%)",0.2523,"7.27e-02",945,81,13
+"Flumioxazin","No Adjustment",1.2324,"1.99e-02",579,51,12
+"Flumioxazin","Education index",1.355,"1.17e-02",579,51,12
+"Flumioxazin","Household income",1.3136,"1.38e-02",579,51,12
+"Flumioxazin","House value",1.2624,"1.76e-02",579,51,12
+"Flumioxazin","Rent",1.1942,"2.28e-02",579,51,12
+"Flumioxazin","150% poverty (%)",1.5387,"6.65e-03",579,51,12
+"Flumioxazin","Unemployed (%)",1.3743,"1.13e-02",579,51,12
+"Flumioxazin","Working class (%)",1.2662,"1.73e-02",579,51,12

@@ -1,5 +1,9 @@
-lib <- "/home/smaas/R/x86_64-pc-linux-gnu-library/4.1"
-.libPaths(lib)
+### Script to reproduce results of:
+### Epigenetic Fingerprints Link Early-Onset Colon and Rectal Cancer to Pesticide Exposure  
+### Silvana C.E. Maas, Iosune Baraibar, Lea Lemler, Maria Butjosa-Espín, Odei Blanco Irazuegui, Elena Elez, Jose A. Seoane 
+### author: Silvana C.E. Maas (silvanamaas at vhio.net)
+
+
 library(maftools)
 library(fabricatr)
 
